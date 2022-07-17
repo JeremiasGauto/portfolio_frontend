@@ -11,6 +11,8 @@ import { IntroComponent } from './components/intro/intro.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EstudiosComponent } from './components/estudios/estudios.component';
+import { HardAndSoftComponent } from './components/hard-and-soft/hard-and-soft.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { EstudiosComponent } from './components/estudios/estudios.component';
     IntroComponent,
     AcercaDeComponent,
     ExperienciaComponent,
-    EstudiosComponent
+    EstudiosComponent,
+    HardAndSoftComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgCircleProgressModule.forRoot({}),
   ],
   providers: [],
   bootstrap: [AppComponent]
