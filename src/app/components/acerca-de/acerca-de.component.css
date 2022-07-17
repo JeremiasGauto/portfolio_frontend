@@ -1,0 +1,41 @@
+.row {
+  width: max-width;
+  background-color: #171718;
+  text-align: center;
+  align-items: center;
+  align-content: flex-start;
+  height: auto;
+  position: relative;
+}
+#nombre {
+  color: rgba(255, 255, 255, 0.39);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+h1 {
+  color: rgba(255, 255, 255, 0.39);
+}
+p {
+  color: rgb(133, 124, 124);
+}
+#yo{
+  width: 300px;
+}
+
+#yo{
+
+  width: 200px;
+  height: auto;
+
+}
+
+@media (min-width: 576px) {
+  #yo {
+    border-radius: 50%;
+    left: 20px;
+    position: absolute;
+    top: -70px;
+    width: 15%;
+    z-index: 1000;
+  }
+}
