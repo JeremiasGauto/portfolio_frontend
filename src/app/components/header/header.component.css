@@ -1,0 +1,145 @@
+.container {
+  height: 100px;
+  display: flex;
+  background: #171718;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.redes {
+  height: 100%;
+  background: #171718;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1;
+}
+
+.btn {
+  display: inline-block;
+  /* display in block para que tome la animacion de los "a" */
+  width: 6rem;
+  height: 3em;
+  margin-right: 2rem;
+  text-decoration: none;
+  color: #30dd72;
+  transition: all 0.5s ease-in-out;
+  animation-name: navAparicion;
+  animation-duration: 1s;
+  animation-direction: normal;
+}
+
+.btn:hover {
+  color: #69df3b;
+  border-bottom: 2px solid rgb(201, 56, 230);
+  transform: translateY(-20%);
+  transform: scale(1.2);
+}
+
+#logo {
+  width: 200px;
+  padding-left: 20px;
+}
+
+/*-------------------aparicion de las redes sociales-------------------------------*/
+
+@keyframes navAparicion {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.fa-brands {
+  width: 70px;
+  font-size: 3em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation-name: navAparicion;
+  animation-duration: 4s;
+  animation-direction: normal;
+}
+.fa-brands:hover {
+  transform: scale(1.4);
+}
+
+.fa-facebook {
+  color: rgb(38, 38, 241);
+  animation-name: navAparicion;
+  animation-duration: 1s;
+  animation-direction: normal;
+}
+
+.fa-twitter {
+  color: rgb(28, 119, 194);
+  animation-name: navAparicion;
+  animation-duration: 2s;
+  animation-direction: normal;
+}
+
+.fa-github {
+  color: rgb(255, 255, 255);
+  animation-name: navAparicion;
+  animation-duration: 3s;
+  animation-direction: normal;
+}
+
+.fa-instagram {
+  animation-name: navAparicion;
+  animation-duration: 4s;
+  animation-direction: normal;
+  color: rgb(190, 79, 176);
+  background: radial-gradient(rgb(255, 0, 242), rgb(255, 123, 0));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.fa-linkedin {
+  color: rgb(61, 96, 194);
+  animation-name: navAparicion;
+  animation-duration: 5s;
+  animation-direction: normal;
+}
+
+/*----------------se acomodan items en columnas--------------------------------------------*/
+
+@media (max-width: 576px) {
+  #logo {
+    margin-top: 20px;
+    padding: 0;
+  }
+  .redes {
+    height: auto;
+    width: 100%;
+    margin: 10px auto;
+    padding: 20px 0px;
+    background: transparent;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-left: 36px;
+    background: transparent;
+    flex-direction: column;
+    z-index: 1;
+  }
+  .container {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    background: #171718;
+    flex-direction: column;
+    align-items: center;
+  }
+  .fa-brands {
+    margin: 20px;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+}
