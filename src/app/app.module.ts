@@ -13,6 +13,7 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { EstudiosComponent } from './components/estudios/estudios.component';
 import { HardAndSoftComponent } from './components/hard-and-soft/hard-and-soft.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     AcercaDeComponent,
     ExperienciaComponent,
     EstudiosComponent,
-    HardAndSoftComponent
+    HardAndSoftComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,
