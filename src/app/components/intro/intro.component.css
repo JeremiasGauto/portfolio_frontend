@@ -1,0 +1,53 @@
+* {
+  padding-left: 20px;
+}
+
+span {
+  color: rgb(124, 154, 211);
+  display: block;
+
+  animation-name: nombreAparicion;
+  animation-duration: 0.5s;
+}
+
+#introduccion {
+  left: 0;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+h3 {
+  animation-name: nombreAparicion;
+  animation-duration: 3s;
+  color: rgb(191 35 120);
+}
+.nombre {
+  /* display:inline; */
+
+  transition: all 3s ease;
+  animation-name: nombreAparicion;
+  animation-duration: 2s;
+}
+.nombre:hover {
+  cursor: pointer;
+}
+
+@keyframes nombreAparicion {
+  from {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@media (max-width: 576px) {
+  #introduccion {
+    display: none;
+  }
+}
