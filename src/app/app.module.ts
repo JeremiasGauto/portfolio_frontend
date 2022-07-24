@@ -15,6 +15,7 @@ import { HardAndSoftComponent } from './components/hard-and-soft/hard-and-soft.c
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
+import {HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NgbModule,
     FontAwesomeModule,
     NgCircleProgressModule.forRoot({}),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
