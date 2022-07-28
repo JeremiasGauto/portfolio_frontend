@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'; 
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -19,9 +20,11 @@ export class HeaderComponent implements OnInit {
   faLinkedin = faLinkedin;
   faGithub = faGithub;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  login(){
+    this.router.navigate(['/login']);
+  }
 }

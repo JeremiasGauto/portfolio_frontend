@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -16,6 +14,10 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, ROUTES } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {HttpClientModule } from '@angular/common/http';
     EstudiosComponent,
     HardAndSoftComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,10 @@ import {HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
+    AppRoutingModule,
+    RouterModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
