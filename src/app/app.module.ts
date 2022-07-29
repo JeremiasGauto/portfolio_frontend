@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, ROUTES } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { RouterModule, ROUTES } from '@angular/router';
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   
   providers: [],
