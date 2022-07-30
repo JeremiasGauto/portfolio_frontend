@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/model/login-usuario';
 import { AuthService } from 'src/app/service/auth.service';
@@ -22,7 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(private tokenService: TokenService, private authService: AuthService, private router:Router) { }
 
   ngOnInit(): void {
-    if (this.tokenService.getToken()) {
+    if(this.tokenService.getToken()) {
       this.isLogged = true;
       this.IsLoggingFailed = false;
       this.roles = this.tokenService.getAuthorities();

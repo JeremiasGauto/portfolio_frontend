@@ -5,6 +5,7 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-header',
@@ -14,17 +15,34 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
   
 export class HeaderComponent implements OnInit {
   
+  isLogged = false;
+  
   faInstagram = faInstagram;
   faFacebook = faFacebook;
   faTwitter = faTwitter;
   faLinkedin = faLinkedin;
   faGithub = faGithub;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private tokenService: TokenService) { }
 
-  ngOnInit(): void {
-  }
   login(){
     this.router.navigate(['/login']);
   }
+  ngOnInit(): void {
+    if (this.tokenService.getToken()) { 
+    this.isLogged = true;
+  }else{
+    this.isLogged = false;
+  }
+  }
+
+  onLogout(): void{
+    
+    this.tokenService.logOut();
+    window.location.reload();
+
+  }
+
+
+  
 }

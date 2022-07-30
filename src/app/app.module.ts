@@ -19,6 +19,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, ROUTES } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { interceptorProvider, InterceptorService } from './service/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule
   ],
   
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
