@@ -2,12 +2,25 @@
   <div class="exp col-lg-6">
     <h1>Experiencia laboral</h1>
 
+    <app-new-experiencia ></app-new-experiencia>
+
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let experiencia of exper">
+          <td>{{experiencia.nombreE}}</td>
+          <td>{{experiencia.descripcionE}}</td>
+          <td>editar</td>
+          <td>borrar</td>
+        </tr>
+      </tbody>
+
+
+    </table>
+
     <ul>
       <li>
-        <a href="http://www.clinicaguemes.com.ar/index.php"></a
-        ><a href="http://www.clinicaguemes.com.ar/index.php"
-          ><img src="../../../assets/vall4.png" alt="vall sound" class="icono"
-        /></a>
+        <a href="http://www.clinicaguemes.com.ar/index.php"></a><a href="http://www.clinicaguemes.com.ar/index.php"><img
+            src="../../../assets/vall4.png" alt="vall sound" class="icono" /></a>
         <h2>Vall sound</h2>
         <p>
           Encargado de mantenimiento de artefactos de iluminacion, cabezales
@@ -20,12 +33,8 @@
 
     <ul>
       <li>
-        <a href="http://www.clinicaguemes.com.ar/index.php"
-          ><img
-            src="../../../assets/cgdefinitivo.png"
-            alt="Clinica Guemes"
-            class="icono"
-        /></a>
+        <a href="http://www.clinicaguemes.com.ar/index.php"><img src="../../../assets/cgdefinitivo.png"
+            alt="Clinica Guemes" class="icono" /></a>
         <h2 id="clinica">Clinica Güemes</h2>
       </li>
       <p>
@@ -37,12 +46,8 @@
 
     <ul>
       <li>
-        <a href="https://www.industriasdelgado.com.ar/"
-          ><img
-            class="icono"
-            src="../../../assets/logoIddef.png"
-            alt="Industrias Delgado"
-        /></a>
+        <a href="https://www.industriasdelgado.com.ar/"><img class="icono" src="../../../assets/logoIddef.png"
+            alt="Industrias Delgado" /></a>
         <h2 id="delgado">Industrias Delgado SA</h2>
       </li>
       <p>
@@ -54,60 +59,27 @@
     </ul>
   </div>
 
-  <div
-    data-aos="fade-up"
-    data-aos-anchor-placement="center-bottom"
-    data-aos-duration="2000"
-    id="trabajo"
-    class="carousel slide col-lg-6"
-    data-bs-ride="carousel"
-  >
+  <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000" id="trabajo"
+    class="carousel slide col-lg-6" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img
-          src="../../../assets/vall2.jpg"
-          class="d-block w-100 img-fluid"
-          alt="..."
-        />
+        <img src="../../../assets/vall2.jpg" class="d-block w-100 img-fluid" alt="..." />
       </div>
       <div class="carousel-item">
-        <img
-          src="../../../assets/vall3.jpg"
-          class="d-block w-100 img-fluid"
-          alt="..."
-        />
+        <img src="../../../assets/vall3.jpg" class="d-block w-100 img-fluid" alt="..." />
       </div>
       <div class="carousel-item">
-        <img
-          src="../../../assets/vall4.png"
-          class="d-block w-100 img-fluid"
-          alt="..."
-        />
+        <img src="../../../assets/vall4.png" class="d-block w-100 img-fluid" alt="..." />
       </div>
       <div class="carousel-item">
-        <img
-          src="../../../assets/id1.jpg"
-          class="d-block w-100img-fluid"
-          alt="..."
-          height="200px"
-        />
+        <img src="../../../assets/id1.jpg" class="d-block w-100img-fluid" alt="..." height="200px" />
       </div>
     </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#trabajo"
-      data-bs-slide="prev"
-    >
+    <button class="carousel-control-prev" type="button" data-bs-target="#trabajo" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#trabajo"
-      data-bs-slide="next"
-    >
+    <button class="carousel-control-next" type="button" data-bs-target="#trabajo" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>

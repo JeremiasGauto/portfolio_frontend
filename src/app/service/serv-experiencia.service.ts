@@ -7,7 +7,7 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class ServExperienciaService {
-  experienciaURL = 'http://localhost:8080/explab'
+  experienciaURL = 'http://localhost:8080/explab/'
 
 
   constructor(private httpClient: HttpClient) { }
@@ -21,7 +21,7 @@ export class ServExperienciaService {
   }
 
   public save(experiencia: Experiencia): Observable<any>{
-    return this.httpClient.post<any>(this.experienciaURL + 'create', experiencia);
+    return this.httpClient.post<any>(this.experienciaURL +'create', experiencia);
   }
 
   public update(id: number, experiencia: Experiencia): Observable<any>{    

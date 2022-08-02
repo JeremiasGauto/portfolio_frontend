@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, ROUTES } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { interceptorProvider, InterceptorService } from './service/interceptor-service';
+import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { interceptorProvider, InterceptorService } from './service/interceptor-s
     ProyectosComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NewExperienciaComponent
   ],
   imports: [
     BrowserModule,
