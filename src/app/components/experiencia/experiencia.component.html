@@ -2,7 +2,7 @@
   <div class="exp col-lg-6">
     <h1>Experiencia laboral</h1>
 
-    <app-new-experiencia ></app-new-experiencia>
+    <button type="button" class="btn btn-primary" routerLink='/nuevaexp' *ngIf="isLogged">NUEVA EXPERIENCIA</button>
 
     <table class="table">
       <tbody>
