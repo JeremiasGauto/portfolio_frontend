@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ServExperienciaService } from 'src/app/service/serv-experiencia.service';
 import { TokenService } from 'src/app/service/token.service';
+
 
 @Component({
   selector: 'app-experiencia',
@@ -11,6 +14,8 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class ExperienciaComponent implements OnInit {
   exper: Experiencia[] = [];
+  faEdit = faEdit
+  faTrashCan=faTrashCan
 
   constructor(private servExperiencia: ServExperienciaService, private tokenService: TokenService, router: Router) { }
   isLogged = false;

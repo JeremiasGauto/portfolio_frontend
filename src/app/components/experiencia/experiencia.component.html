@@ -7,10 +7,16 @@
     <table class="table">
       <tbody>
         <tr *ngFor="let experiencia of exper">
-          <td>{{experiencia.nombreE}}</td>
-          <td>{{experiencia.descripcionE}}</td>
-          <td>editar</td>
-          <td>borrar</td>
+          <td>
+            <h2>{{experiencia.nombreE}}</h2>
+          </td>
+          <td>
+            <h2>{{experiencia.descripcionE}}</h2>
+          </td>
+          <td>editar <fa-icon [icon]="faEdit" id="edit"></fa-icon>
+          </td>
+          <td>borrar <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>
+          </td>
         </tr>
       </tbody>
 

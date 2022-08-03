@@ -38,3 +38,11 @@ h2 {
     opacity: 1;
   }
 }
+
+#edit {
+  color: rgb(7, 255, 7);
+}
+
+#trash {
+  color: rgb(255, 0, 0);
+}
