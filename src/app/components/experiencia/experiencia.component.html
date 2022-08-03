@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="exp col-lg-6">
+  <div class="exp col-sm-6 col-lg-6 ">
     <h1>Experiencia laboral</h1>
 
     <button type="button" class="btn btn-primary" routerLink='/nuevaexp' *ngIf="isLogged">NUEVA EXPERIENCIA</button>
@@ -11,11 +11,22 @@
             <h2>{{experiencia.nombreE}}</h2>
           </td>
           <td>
-            <h2>{{experiencia.descripcionE}}</h2>
+            {{experiencia.descripcionE}}
           </td>
-          <td>editar <fa-icon [icon]="faEdit" id="edit"></fa-icon>
+
+          <td *ngIf="isLogged">
+            <button class="btn btn-secondary" routerLink="/editexp/{{experiencia.id}}">
+              <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
+            </button>
           </td>
-          <td>borrar <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>
+
+
+          <td *ngIf="isLogged">
+            <button class="btn btn-secondary" (click)="delete(experiencia.id)">
+          <td><fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar 
+            </button>
+
+
           </td>
         </tr>
       </tbody>
@@ -66,7 +77,7 @@
   </div>
 
   <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000" id="trabajo"
-    class="carousel slide col-lg-6" data-bs-ride="carousel">
+    class="carousel slide col-sm-1 col-md-1 col-lg-6" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="../../../assets/vall2.jpg" class="d-block w-100 img-fluid" alt="..." />

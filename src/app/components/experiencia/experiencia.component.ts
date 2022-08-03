@@ -14,6 +14,7 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class ExperienciaComponent implements OnInit {
   exper: Experiencia[] = [];
+  
   faEdit = faEdit
   faTrashCan=faTrashCan
 
@@ -34,5 +35,15 @@ export class ExperienciaComponent implements OnInit {
       data => { this.exper = data; } )
  }
 
+  delete(id?: number) {
+    if (id != undefined) {
+      this.servExperiencia.delete(id).subscribe(data => { 
+        this.cargarExperiencia();
+      }, err => {
+        alert("No se puede eliminar experiencia")
+      })
+    }
+  }
+  
 }
 
