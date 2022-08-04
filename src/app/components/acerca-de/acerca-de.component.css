@@ -7,6 +7,10 @@
   height: auto;
   position: relative;
 }
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
 #nombre {
   color: rgba(255, 255, 255, 0.39);
   font-weight: bold;

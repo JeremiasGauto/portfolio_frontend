@@ -8,13 +8,17 @@
 #estudios {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
 }
 
 h1 {
   text-align: center;
   font-weight: bold;
   padding-bottom: 50px;
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
 }
 
 #primaria {

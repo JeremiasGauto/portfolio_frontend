@@ -1,104 +1,44 @@
-<div class="row">
-  <div class="exp col-sm-6 col-lg-6 ">
-    <h1>Experiencia laboral</h1>
+<div class="container-fluid">
 
-    <button type="button" class="btn btn-primary" routerLink='/nuevaexp' *ngIf="isLogged">NUEVA EXPERIENCIA</button>
+  <div class="row">
+    <div class="row col-sm-1 col-md-1 col-lg-1"></div>
+    <div class="exp col-sm-1 col-md-1 col-lg-11 ">
+      <h1>Experiencia laboral</h1>
 
-    <table class="table">
-      <tbody>
-        <tr *ngFor="let experiencia of exper">
-          <td>
-            <h2>{{experiencia.nombreE}}</h2>
-          </td>
-          <td>
-            {{experiencia.descripcionE}}
-          </td>
+      <button type="button" class="btn btn-primary" routerLink='/nuevaexp' *ngIf="isLogged">NUEVA EXPERIENCIA</button>
 
-          <td *ngIf="isLogged">
-            <button class="btn btn-secondary" routerLink="/editexp/{{experiencia.id}}">
-              <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
-            </button>
-          </td>
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let experiencia of exper">
+            <td>
+              <h2>{{experiencia.nombreE}}</h2>
+            </td>
+            <td>
+              {{experiencia.descripcionE}}
+            </td>
 
-
-          <td *ngIf="isLogged">
-            <button class="btn btn-secondary" (click)="delete(experiencia.id)">
-          <td><fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar 
-            </button>
+            <td *ngIf="isLogged">
+              <button class="btn btn-secondary" routerLink="/editexp/{{experiencia.id}}">
+                <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
+              </button>
+            </td>
 
 
-          </td>
-        </tr>
-      </tbody>
+            <td *ngIf="isLogged">
+              <button class="btn btn-secondary" (click)="delete(experiencia.id)">
+            <td>
+              <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar
+              </button>
 
 
-    </table>
+            </td>
+          </tr>
+        </tbody>
 
-    <ul>
-      <li>
-        <a href="http://www.clinicaguemes.com.ar/index.php"></a><a href="http://www.clinicaguemes.com.ar/index.php"><img
-            src="../../../assets/vall4.png" alt="vall sound" class="icono" /></a>
-        <h2>Vall sound</h2>
-        <p>
-          Encargado de mantenimiento de artefactos de iluminacion, cabezales
-          moviles, etc. Manejo y Programacion de consolas e interfaces de
-          iluminacion para eventos de sonido en vivo, discotecas y eventos
-          empresariales. (2008-2010)
-        </p>
-      </li>
-    </ul>
 
-    <ul>
-      <li>
-        <a href="http://www.clinicaguemes.com.ar/index.php"><img src="../../../assets/cgdefinitivo.png"
-            alt="Clinica Guemes" class="icono" /></a>
-        <h2 id="clinica">Clinica Güemes</h2>
-      </li>
-      <p>
-        Citopreparación, screening de PAP y realización de cortes histológicos
-        en biopsias intraoperatorias por congelación en el servicio de anatomía
-        patológica de la Clínica Güemes de la localidad de Luján. (2010 - 2014).
-      </p>
-    </ul>
+      </table>
 
-    <ul>
-      <li>
-        <a href="https://www.industriasdelgado.com.ar/"><img class="icono" src="../../../assets/logoIddef.png"
-            alt="Industrias Delgado" /></a>
-        <h2 id="delgado">Industrias Delgado SA</h2>
-      </li>
-      <p>
-        Data entry, PCP (programación y control de la producción), Analista de
-        datos: implementación de herramientas de business inteligence, (Power
-        bi). Transformacion y extraccion de datos, confección de dashboards
-        interactivos para toma de decisiones a corto plazo. (2015-actualidad).
-      </p>
-    </ul>
-  </div>
 
-  <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000" id="trabajo"
-    class="carousel slide col-sm-1 col-md-1 col-lg-6" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../../../assets/vall2.jpg" class="d-block w-100 img-fluid" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="../../../assets/vall3.jpg" class="d-block w-100 img-fluid" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="../../../assets/vall4.png" class="d-block w-100 img-fluid" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="../../../assets/id1.jpg" class="d-block w-100img-fluid" alt="..." height="200px" />
-      </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#trabajo" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#trabajo" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+
   </div>
-</div>

@@ -6,11 +6,16 @@
   justify-content: space-between;
 }
 
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
 .redes {
   height: 100%;
   background: #171718;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   z-index: 1;
 }
@@ -56,8 +61,9 @@
 }
 
 .fa-brands {
-  width: 70px;
-  font-size: 3em;
+  width: auto;
+  padding: 0.5rem;
+  font-size: 3rem;
   text-decoration: none;
   transition: all 0.3s ease;
   animation-name: navAparicion;
@@ -110,20 +116,22 @@
 
 @media (max-width: 576px) {
   #logo {
-    margin-top: 20px;
+    margin-top: 0.5rem;
     padding: 0;
+  }
+  .row {
+    background-color: black;
   }
   .redes {
     height: auto;
     width: 100%;
     margin: 10px auto;
-    padding: 20px 0px;
+    padding: 0.1rem;
     background: transparent;
     display: flex;
     align-content: space-around;
     flex-wrap: nowrap;
     align-items: center;
-    padding-left: 36px;
     background: transparent;
     flex-direction: column;
     z-index: 1;
@@ -137,9 +145,10 @@
     align-items: center;
   }
   .fa-brands {
-    margin: 20px;
+    margin: 10px;
   }
   .btn {
     margin-top: 20px;
+    margin-left: 20px;
   }
 }

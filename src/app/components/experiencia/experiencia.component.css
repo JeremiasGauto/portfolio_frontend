@@ -1,5 +1,6 @@
 * {
   background-color: #171718;
+  
 }
 p {
   color: #717172;
@@ -17,7 +18,7 @@ h1 {
 }
 h2 {
   color: #717172;
-  display: inline;
+  
 }
 .icono {
   width: 80px;
@@ -25,18 +26,16 @@ h2 {
 }
 .exp {
   margin-bottom: 5%;
+  padding: 0;
+  margin: 0;
 }
 
-@keyframes navAparicion {
-  from {
-    transform: translateY(-20%);
-    opacity: 0;
-  }
 
-  to {
-    transform: translateY(0%);
-    opacity: 1;
-  }
+
+.container-fluid {
+  
+  padding: 0;
+  margin: 0;
 }
 
 #edit {
