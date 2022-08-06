@@ -3,8 +3,6 @@
   background-color: #c7803a;
 }
 
-
-
 h1 {
   text-align: center;
   font-weight: bold;
@@ -15,11 +13,7 @@ h1 {
   background-color: #c7803a;
   padding: 0;
   margin: 0;
-
-  
 }
-
-
 
 @keyframes navAparicion {
   from {
@@ -43,35 +37,38 @@ h1 {
 
 #edit {
   color: rgb(7, 255, 7);
-  background-color:transparent;
+  background-color: transparent;
 }
 
 #trash {
   color: rgb(255, 0, 0);
-  background-color:transparent;
+  background-color: transparent;
 }
 
-.card-body,P,H5,span{
-
-  background-color:#152351
+.card-body,
+P,
+H5,
+span {
+  background-color: #152351;
 }
-.empresa{
+.empresa {
   font-weight: bold;
   color: rgb(204, 19, 66);
 }
 
-.descripcion{
-
-font-weight: bold;
+.descripcion {
+  font-weight: bold;
   color: rgb(74, 89, 173);
-
 }
 
-h5{
-  color: rgb(255, 255, 255)
+h5 {
+  color: rgb(255, 255, 255);
 }
 
 p {
   color: #717172;
 }
 
+.btn-dark {
+  border-color: var(--bs-white);
+}

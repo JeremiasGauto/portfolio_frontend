@@ -45,5 +45,8 @@ export class EstudiosComponent implements OnInit {
     }
   }
 
+  rolAdmin = this.tokenService.getAuthorities().includes('ROLE_ADMIN')
+  
+  
 
 }

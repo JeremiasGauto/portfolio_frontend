@@ -50,7 +50,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   
-  
+  rolAdmin = this.tokenService.getAuthorities().includes('ROLE_ADMIN')
 
   
 }

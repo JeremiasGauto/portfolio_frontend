@@ -4,40 +4,39 @@
     <div class=" col-sm-1 col-md-1 col-lg-1"></div>
 
     <div class=" col-sm-10 col-md-10 col-lg-10 ">
-      
-      
-     
+
+
+
 
       <h1>Experiencia laboral</h1>
 
-      <button id="button " type="button" class="btn btn-primary" routerLink='/nuevaexp' *ngIf="isLogged">NUEVA
+      <button id="button " type="button" class="btn btn-primary" routerLink='/nuevaexp' *ngIf="rolAdmin">NUEVA
         EXPERIENCIA</button>
 
-        <div class="card w-150 mt-3 mb-3"*ngFor="let experiencia of exper">
-          <div class="card-body rounded border border-light ">
-            <p><span class="empresa">NOMBRE DE LA EMPRESA:</span></p>
-            
-        
-            <h5 class="card-title" >{{experiencia.nombreE}}</h5>
-            <br>
-            <br>
-            <p><span class="descripcion">DESCRIPCION DEL EMPLEO:</span> </p>
-            
-            <p class="card-text">{{experiencia.descripcionE}}</p>
-            <button  *ngIf="isLogged" class="btn btn-secondary" routerLink="/editexp/{{experiencia.id}}">
-              <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
-            </button>
-            <button *ngIf="isLogged"class="btn btn-secondary" (click)="delete(experiencia.id)">
-            
-              <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar
-            </button>
-          </div>
+      <div class="card w-150 mt-3 mb-3" *ngFor="let experiencia of exper">
+        <div class="card-body rounded border border-light ">
+          <p><span class="empresa">NOMBRE DE LA EMPRESA:</span></p>
+
+
+          <h5 class="card-title">{{experiencia.nombreE}}</h5>
+          <br>
+          <br>
+          <p><span class="descripcion">DESCRIPCION DEL EMPLEO:</span> </p>
+
+          <p class="card-text">{{experiencia.descripcionE}}</p>
+          <button *ngIf="rolAdmin" class="btn btn-secondary" routerLink="/editexp/{{experiencia.id}}">
+            <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
+          </button>
+          <button *ngIf="rolAdmin" class="btn btn-secondary" (click)="delete(experiencia.id)">
+
+            <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar
+          </button>
         </div>
+      </div>
 
 
 
       <div class=" col-sm-1 col-md-1 col-lg-1 "></div>
-    
-    
-  </div>
 
+
+    </div>
