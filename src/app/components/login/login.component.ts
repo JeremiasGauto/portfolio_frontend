@@ -50,8 +50,8 @@ export class LoginComponent implements OnInit {
     }, err => {
       this.isLogged = false;
       this.IsLoggingFailed = true;
-      this.errMsj = err.error.mensaje;
-      console.log(this.errMsj);
+      this.errMsj = "Usuario o password incorrecto";
+      alert(this.errMsj);
     })
     }
     
