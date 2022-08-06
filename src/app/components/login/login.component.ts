@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/model/login-usuario';
 import { AuthService } from 'src/app/service/auth.service';
 import { TokenService } from 'src/app/service/token.service';
+import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +18,15 @@ export class LoginComponent implements OnInit {
   password!: string;
   roles: string[] = [];
   errMsj!: string;
+  form:FormGroup;
 
-  constructor(private tokenService: TokenService, private authService: AuthService, private router:Router) { }
+  constructor(private tokenService: TokenService, private authService: AuthService, private router: Router, private formBuilder: FormBuilder) {
+    this.form = this.formBuilder.group({
+      nombreUsuario:['',[Validators.required,Validators.minLength(4)]],
+      password:['',[Validators.required,Validators.minLength(4)]]
+    })
+
+   }
 
   ngOnInit(): void {
     if(this.tokenService.getToken()) {
@@ -44,13 +52,16 @@ export class LoginComponent implements OnInit {
       this.IsLoggingFailed = true;
       this.errMsj = err.error.mensaje;
       console.log(this.errMsj);
-
-
     })
-
-
     }
     
+  get NombreUsuario() {
+    return this.form.get('nombreUsuario');
+  }
+  
+  get Password() {
+    return this.form.get('password');
+    }
 
   }
 

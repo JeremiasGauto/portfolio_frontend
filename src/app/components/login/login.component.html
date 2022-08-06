@@ -3,57 +3,80 @@
   <div class="row">
 
 
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-dark text-white" style="border-radius: 1rem">
-          <div class="card-body p-5 text-center">
-            <div class="mb-md-5 mt-md-4 pb-5">
-              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-              <p class="text-white-50 mb-5">
-                Please enter your login and password!
-              </p>
+    <section class="vh-100 gradient-custom">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white" style="border-radius: 1rem">
+              <div class="card-body p-5 text-center">
+                <div class="mb-md-5 mt-md-4 pb-5">
+                  <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                  <p class="text-white-50 mb-5">
+                    Please enter your login and password!
+                  </p>
 
-              <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                  <form #f="ngForm" [formGroup]="form" (ngSubmit)="onLogin()" novalidate>
 
-                <div class="form-outline form-white mb-4">
-                  <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg"
-                    [(ngModel)]="nombreUsuario" required />
-                  <label class="form-label" for="nombreUsuario">Nombre de usuario</label>
+                    <div class="form-outline form-white mb-4">
+                      <label class="form-label" for="nombreUsuario">Nombre de usuario</label>
+                    </div>
+
+                    <input type="email" id="nombreUsuario" name="nombreUsuario" formControlName="nombreUsuario"
+                      [ngClass]="{'is-invalid': NombreUsuario?.errors && NombreUsuario?.touched && NombreUsuario?.hasError,
+                    'is-valid': !NombreUsuario?.errors
+                   }" class="form-control form-control-lg" [(ngModel)]="nombreUsuario" required />
+
+                    <div *ngIf="NombreUsuario?.errors && NombreUsuario?.touched ">
+                      <p *ngIf="NombreUsuario.hasError('required')" class="text-danger">El nombre de usuario es
+                        requerido</p>
+
+                      <p *ngIf="NombreUsuario.hasError('nombreUsuario')" class="text-danger">El nombre de usuario es
+                        requerido</p>
+
+                    </div>
+
+
+                    <div class="form-outline form-white mb-4">
+                      <label class="form-label" for="password">Password</label>
+                    </div>
+
+                    <input type="password" id="password" name="password" formControlName="password" [ngClass]="{'is-invalid': Password?.errors && Password?.touched && Password?.hasError,
+                    'is-valid': !Password?.errors
+                   }" class="form-control form-control-lg" [(ngModel)]="password" required />
+
+                    <div *ngIf="Password?.errors && Password?.touched ">
+                      <p *ngIf="Password.hasError('required')" class="text-danger">Por favor coloque el password</p>
+
+
+
+                    </div>
+
+
+
+                    <p class="small mb-5 pb-lg-2">
+                      <a class="text-white-50" href="#!">Forgot password?</a>
+                    </p>
+
+                    <button class="btn btn-outline-light btn-lg px-5" type="submit">
+                      Login
+                    </button>
+
+                  </form>
+
+
                 </div>
 
-                <div class="form-outline form-white mb-4">
-                  <input type="password" id="password" name="password" class="form-control form-control-lg"
-                    [(ngModel)]="password" required />
-
-                  <label class="form-label" for="password">Password</label>
+                <div>
+                  <p class="mb-0">
+                    Don't have an account?
+                    <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
+                  </p>
                 </div>
-
-                <p class="small mb-5 pb-lg-2">
-                  <a class="text-white-50" href="#!">Forgot password?</a>
-                </p>
-
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">
-                  Login
-                </button>
-
-              </form>
-
-
-            </div>
-
-            <div>
-              <p class="mb-0">
-                Don't have an account?
-                <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
-              </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
   </div>
 </div>
