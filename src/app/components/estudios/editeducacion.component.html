@@ -4,13 +4,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ingrese una nueva Experiencia laboral</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Ingrese una nueva Educacion</h5>
 
                 </div>
                 <div class="modal-body">
                     <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate>
                         <div class="mb-3">
-                            <label for="nombreE" class="col-form-label">Nombre de la Institucion:</label>
+                            <label for="nombreE" class="col-form-label">Nombre del establecimiento o estudio realizado:</label>
                             <input type="text" class="form-control" id="nombreE" name="nombreE" required
                                 [(ngModel)]="educacion.nombreE" required>
                         </div>

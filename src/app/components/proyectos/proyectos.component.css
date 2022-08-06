@@ -25,3 +25,8 @@ h4 {
 #contenedor {
   display: flex;
 }
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}

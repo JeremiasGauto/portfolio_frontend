@@ -1,13 +1,10 @@
-* {
+.container-fluid {
   background-color: #171718;
-  
-}
-p {
-  color: #717172;
+  padding: 0;
 }
 
-.row {
-  padding-top: 5%;
+p {
+  color: #717172;
 }
 
 h1 {
@@ -17,31 +14,45 @@ h1 {
   padding-bottom: 50px;
 }
 h2 {
-  color: #717172;
-  
+  color: #3434d6;
+}
+h5 {
+  color: rgb(255, 255, 255);
 }
 .icono {
   width: 80px;
   margin: 30px;
 }
-.exp {
-  margin-bottom: 5%;
-  padding: 0;
-  margin: 0;
-}
-
-
-
-.container-fluid {
-  
-  padding: 0;
-  margin: 0;
-}
 
 #edit {
   color: rgb(7, 255, 7);
+  background-color: transparent;
 }
 
 #trash {
   color: rgb(255, 0, 0);
+  background-color: transparent;
+}
+
+.car-header {
+  border: 2px solid rgb(75, 69, 74);
+}
+
+.card-body,
+P,
+H5,
+span {
+  background-color: rgb(47, 52, 56);
+}
+.empresa {
+  font-weight: bold;
+  color: rgb(204, 19, 66);
+}
+
+.descripcion {
+  font-weight: bold;
+  color: rgb(74, 89, 173);
+}
+.row{
+  margin: 0;
 }

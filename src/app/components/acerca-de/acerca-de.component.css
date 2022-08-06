@@ -1,5 +1,6 @@
 .row {
-  width: max-width;
+  
+  
   background-color: #171718;
   text-align: center;
   align-items: center;
@@ -7,10 +8,7 @@
   height: auto;
   position: relative;
 }
-.container-fluid {
-  padding: 0;
-  margin: 0;
-}
+
 #nombre {
   color: rgba(255, 255, 255, 0.39);
   font-weight: bold;
@@ -22,15 +20,10 @@ h1 {
 p {
   color: rgb(133, 124, 124);
 }
-#yo{
-  width: 300px;
-}
 
-#yo{
-
+#yo {
   width: 200px;
   height: auto;
-
 }
 
 @media (min-width: 576px) {
@@ -42,4 +35,8 @@ p {
     width: 15%;
     z-index: 1000;
   }
+}
+
+.container-fluid{
+  padding:0;
 }

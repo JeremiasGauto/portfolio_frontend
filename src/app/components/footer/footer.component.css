@@ -6,3 +6,8 @@
 p {
   color: rgb(133, 124, 124);
 }
+
+.container-fluid{
+  padding: 0;
+  margin: 0;
+}

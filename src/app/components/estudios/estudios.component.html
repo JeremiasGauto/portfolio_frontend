@@ -1,42 +1,37 @@
 <div class="container-fluid">
-
   <div class="row">
-    <div class="row col-sm-1 col-md-1 col-lg-1"></div>
-    <div class="exp col-sm-1 col-md-1 col-lg-11 ">
+
+    <div class=" col-sm-1 col-md-1 col-lg-1"></div>
+
+    <div class=" col-sm-10 col-md-10 col-lg-10 ">
       <h1>Estudios</h1>
 
-      <button type="button" class="btn btn-primary" routerLink='/nuevaedu' *ngIf="isLogged">Agregar educacion</button>
+      <button id="button " type="button" class="btn btn-primary" routerLink='/nuevaexp' *ngIf="isLogged">NUEVA
+        EDUCACION</button>
 
-      <table class="table">
-        <tbody>
-          <tr *ngFor="let Educacion of educacion">
-            <td>
-              <h2>{{Educacion.nombreE}}</h2>
-            </td>
-            <td>
-              {{Educacion.descripcionE}}
-            </td>
-
-            <td *ngIf="isLogged">
-              <button class="btn btn-secondary" routerLink="/editedu/{{Educacion.id}}">
-                <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
-              </button>
-            </td>
+      <div class="card w-150 mt-3 mb-3" *ngFor="let educ of educacion">
+        <div class="card-body rounded border border-light ">
+          <p><span class="empresa">NOMBRE DEL ESTABLECIMIENTO:</span></p>
 
 
-            <td *ngIf="isLogged">
-              <button class="btn btn-secondary" (click)="delete(Educacion.id)">
-            <td>
-              <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar
-              </button>
+          <h5 class="card-title">{{educ.nombreE}}</h5>
+          <br>
+          <br>
+          <p><span class="descripcion">DESCRIPCION DEL ESTUDIO REALIZADO:</span> </p>
+
+          <p class="card-text">{{educ.descripcionE}}</p>
+          <button *ngIf="isLogged" class="btn btn-outline-primary" routerLink="/editedu/{{educ.id}}">
+            <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
+          </button>
+          <button *ngIf="isLogged" class="btn btn-dark" (click)="delete(educ.id)">
+
+            <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar
+          </button>
+        </div>
+      </div>
 
 
-            </td>
-          </tr>
-        </tbody>
 
-
-      </table>
 
 
     </div>

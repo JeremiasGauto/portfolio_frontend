@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   
   isLogged = false;
   
+
   faInstagram = faInstagram;
   faFacebook = faFacebook;
   faTwitter = faTwitter;
@@ -39,10 +40,10 @@ export class HeaderComponent implements OnInit {
   onLogout(): void{
     
     this.tokenService.logOut();
-    window.location.reload();
+    this.router.navigate(['login']);
 
   }
 
-
+  
   
 }

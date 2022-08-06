@@ -1,14 +1,9 @@
-* {
-  background-color: #c7803a;
-}
 .row {
   padding-top: 5%;
+  background-color: #c7803a;
 }
 
-#estudios {
-  display: flex;
-  flex-direction: row;
-}
+
 
 h1 {
   text-align: center;
@@ -17,17 +12,14 @@ h1 {
 }
 
 .container-fluid {
+  background-color: #c7803a;
   padding: 0;
   margin: 0;
+
+  
 }
 
-#primaria {
-  cursor: pointer;
-}
 
-.est {
-  margin-bottom: 5%;
-}
 
 @keyframes navAparicion {
   from {
@@ -51,8 +43,35 @@ h1 {
 
 #edit {
   color: rgb(7, 255, 7);
+  background-color:transparent;
 }
 
 #trash {
   color: rgb(255, 0, 0);
+  background-color:transparent;
 }
+
+.card-body,P,H5,span{
+
+  background-color:#152351
+}
+.empresa{
+  font-weight: bold;
+  color: rgb(204, 19, 66);
+}
+
+.descripcion{
+
+font-weight: bold;
+  color: rgb(74, 89, 173);
+
+}
+
+h5{
+  color: rgb(255, 255, 255)
+}
+
+p {
+  color: #717172;
+}
+
