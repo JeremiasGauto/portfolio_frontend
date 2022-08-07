@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faEdit, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Skill } from 'src/app/model/skill';
 import { SkillService } from 'src/app/service/skill.service';
 import { TokenService } from 'src/app/service/token.service';
@@ -12,6 +13,9 @@ export class HardAndSoftComponent implements OnInit {
 
  skill: Skill[] = []
 
+  faEdit = faEdit
+  faTrashCan=faTrashCan
+  
   constructor(private skillservice: SkillService, private tokenService:TokenService) { }
   isLogged = false;
 

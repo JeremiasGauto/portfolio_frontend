@@ -23,3 +23,13 @@ h1{
 p {
     color: white;
 }
+
+#edit {
+  color: rgb(7, 255, 7);
+  background-color: transparent;
+}
+
+#trash {
+  color: rgb(255, 0, 0);
+  background-color: transparent;
+}

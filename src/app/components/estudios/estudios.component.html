@@ -20,6 +20,7 @@
           <p><span class="descripcion">DESCRIPCION DEL ESTUDIO REALIZADO:</span> </p>
 
           <p class="card-text">{{educ.descripcionE}}</p>
+          
           <button *ngIf="rolAdmin" class="btn btn-dark" routerLink="/editedu/{{educ.id}}">
             <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
           </button>

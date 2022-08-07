@@ -8,6 +8,7 @@ import { EditExperienciaComponent } from './components/experiencia/edit-experien
 import { NeweducacionComponent } from './components/estudios/neweducacion.component';
 import { EditeducacionComponent } from './components/estudios/editeducacion.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { EditSkillComponent } from './components/hard-and-soft/edit-skill.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'editexp/:id', component: EditExperienciaComponent },
   { path: 'nuevaedu', component: NeweducacionComponent },
   { path: 'editedu/:id', component: EditeducacionComponent },
+  { path: 'editskill/:id', component: EditSkillComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: NotfoundComponent}
   
