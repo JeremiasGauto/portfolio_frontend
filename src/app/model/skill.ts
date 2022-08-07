@@ -2,8 +2,8 @@ export class Skill {
 
     id?: number;
     nombreSkill: string;
-   fotoSkill: string;
-     porcentaje: number;
+    fotoSkill: string;
+    porcentaje: number;
     
 
     constructor(nombreSkill: string, fotoSkill: string, porcentaje: number) {

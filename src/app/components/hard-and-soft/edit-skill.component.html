@@ -10,18 +10,19 @@
                 <div class="modal-body">
                     <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                         <div class="mb-3">
-                            <label for="nombreE" class="col-form-label">Nombre de la Skill:</label>
-                            <input type="text" class="form-control" id="nombreE" name="nombreE"
+                            
+                            <label for="nombreSkill" class="col-form-label">Nombre de la Skill:</label>
+                            <input type="text" class="form-control" id="nombreSkill" name="nombreSkill"
                                 [(ngModel)]="skills.nombreSkill" required>
                         </div>
                         <div class="mb-3">
-                            <label for="descripcionE" class="col-form-label">Foto de Skill:</label>
-                            <input type="text" class="form-control" name="descripcionE" id="descripcionE"
-                                [(ngModel)]="skills.porcentaje" required>
+                            <label for="fotoSkill" class="col-form-label">Foto de Skill:</label>
+                            <input type="text" class="form-control" name="fotoSkill" id="fotoSkill"
+                                [(ngModel)]="skills.fotoSkill" required>
                         </div>
                         <div class="mb-3">
-                            <label for="nombreE" class="col-form-label">Porcentaje de Skill:</label>
-                            <input type="text" class="form-control" id="nombreE" name="nombreE" [(ngModel)]="skills.nombreSkill" required>
+                            <label for="porcentaje" class="col-form-label">Porcentaje de Skill:</label>
+                            <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="skills.porcentaje" required>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
