@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ingrese una nueva Experiencia laboral</h5>
+
+                </div>
+                <div class="modal-body">
+                    <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+                        <div class="mb-3">
+                            <label for="nombreSkill" class="col-form-label">Nombre de la Skill:</label>
+                            <input type="text" class="form-control" id="nombreSkill" name="nombreSkill" required
+                                [(ngModel)]="nombreSkill" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fotoSkill" class="col-form-label">Foto de la Skill:</label>
+                            <input type="text" class="form-control" name="fotoSkill" id="fotoSkill"
+                                [(ngModel)]="fotoSkill" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="porcentaje" class="col-form-label">Porcentaje:</label>
+                            <input type="text" class="form-control" name="porcentaje" id="porcentaje" [(ngModel)]="porcentaje" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                routerLink='home'>Close</button>
+                            <button type="submit" class="btn btn-primary">Agregar Experiencia</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
