@@ -19,3 +19,7 @@ h1{
 .container-fluid {
  padding: 0;
 }
+
+p {
+    color: white;
+}
