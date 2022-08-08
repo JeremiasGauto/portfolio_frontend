@@ -1,27 +1,27 @@
-*{ 
-   background-color: #171718;
-   
-   
+.row {
+  background-color: #171718;
 }
 
-h1{
-    padding-top: 5%;
-    margin-bottom: 100px;
-    text-align:center;
-    font-weight:bold;
-    color:rgba(255, 255, 255, 0.39);
+h1 {
+  padding-top: 5%;
+  margin-bottom: 100px;
+  text-align: center;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.39);
 }
 
-.circulo{
-    margin-bottom: 100px;
+.circulo {
+  margin-bottom: 100px;
+  margin-right: 3rem;
+  display: inline;
 }
 
 .container-fluid {
- padding: 0;
+  padding: 0;
 }
 
 p {
-    color: white;
+  color: white;
 }
 
 #edit {
@@ -32,4 +32,16 @@ p {
 #trash {
   color: rgb(255, 0, 0);
   background-color: transparent;
+}
+
+.btn-primary {
+  margin-top: 5rem;
+}
+
+.margen {
+  margin-bottom: 4rem;
+}
+
+.btn-dark {
+  border-color: var(--bs-white);
 }
