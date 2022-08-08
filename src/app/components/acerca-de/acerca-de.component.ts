@@ -8,7 +8,7 @@ import { PersonaService } from 'src/app/service/persona.service';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  persona: Persona= new Persona("","","");
+  persona: Persona= new Persona("","","","","");
 
   constructor(public personaService: PersonaService) { }
 
