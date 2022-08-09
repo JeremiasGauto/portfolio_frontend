@@ -45,3 +45,16 @@ p {
 .btn-dark {
   border-color: var(--bs-white);
 }
+
+.card{
+  background-color:rgb(37, 36, 36);
+  margin: 2rem;
+  display: inline-block;
+  border: 1px solid rgb(107, 105, 105);
+  
+}
+
+.card-body {
+  padding-left: 50px;
+}
+

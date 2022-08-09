@@ -9,14 +9,12 @@
       <h1>Hard & soft skills</h1>
 
   
-
-
-          <div *ngFor="let skillastico of skill" class="circulo col-sm-4 col-md-4 col-lg-4">
-
+        <div class="card" style="width: 18rem;" *ngFor="let skillastico of skill">
+          
+          <div class="card-body">
             <circle-progress [showImage]="true" 
             [imageSrc]="skillastico.fotoSkill" 
-            [imageWidth]="79" 
-            [imageHeight]="79"
+            [imageWidth]="79" [imageHeight]="79"
             [title]="skillastico.nombreSkill" 
             [titleColor]="'#52d053'" 
             [percent]=skillastico.porcentaje 
@@ -26,19 +24,32 @@
             [outerStrokeColor]="'#ef953a'" 
             [innerStrokeColor]="'#ff5d5c'"
             [animation]="true" 
-            [animationDuration]="900"></circle-progress>
-            <div class="circulo col-sm-4 col-md-4 col-lg-4">
+            [animationDuration]="900">
+          </circle-progress>
+
+            <h5 class="card-title">{{skillastico.nombreSkill}}</h5>
+            <p class="card-text">{{skillastico.nombreSkill}}</p>
+           
             <button *ngIf="rolAdmin" class="btn btn-dark" routerLink="/editskill/{{skillastico.id}}">
               <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
             </button>
-            <button *ngIf="rolAdmin" class="btn btn-dark" (click)="delete(skillastico.id)">
             
+            <button *ngIf="rolAdmin" class="btn btn-dark" (click)="delete(skillastico.id)">
               <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar
             </button>
-            </div>
-
+            
           </div>
+        </div>
+
+
+
+
+
+
+
+
+          
 
     </div>
-</div>
+  </div>
 </div>
