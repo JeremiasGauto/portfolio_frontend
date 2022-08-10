@@ -1,9 +1,55 @@
 <div class="container-fluid">
 <div class="row">
-    <h1>Proyectos realizados</h1>
+    
+        <h1>Proyectos realizados</h1>
     <br>
     <br>
-            <div class="col-lg-6" id="contenedor">
+        <button id="button " type="button" class="btn btn-primary" routerLink='/nuevaexp' *ngIf="rolAdmin">NUEVA
+                EXPERIENCIA</button>
+        
+        <div class="card w-150 mt-3 mb-3" *ngFor="let proyecto of proyectos">
+                <div class="card-body rounded border border-light ">
+                        <p><span class="empresa">NOMBRE DE LA EMPRESA:</span></p>
+        
+        
+                        <h5 class="card-title">{{proyecto.nombreProyecto}}</h5>
+                        <br>
+                        <br>
+                        <p><span class="descripcion">DESCRIPCION DEL EMPLEO:</span> </p>
+        
+                        <p class="card-text">{{proyecto.descripcionProyecto}}</p>
+                        <button *ngIf="rolAdmin" class="btn btn-secondary" routerLink="/editexp/{{proyecto.id}}">
+                                <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
+                        </button>
+                        <button *ngIf="rolAdmin" class="btn btn-secondary" (click)="delete(proyecto.id)">
+        
+                                <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar
+                        </button>
+                </div>
+        </div>
+        
+        
+        
+        <div class=" col-sm-1 col-md-1 col-lg-1 "></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="col-lg-6" id="contenedor">
                 
                 <h4>proximamente...</h4>
                 <img class="img-fluid" src="../../../assets/working.png" alt="working" id="working">
