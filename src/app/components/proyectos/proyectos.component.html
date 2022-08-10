@@ -1,23 +1,26 @@
 <div class="container-fluid">
-<div class="row">
-    
+        <div class="row">
+
+        <div class=" col-sm-1 col-md-1 col-lg-1"></div>
+
+        <div class=" col-sm-10 col-md-10 col-lg-10 ">
         <h1>Proyectos realizados</h1>
     <br>
     <br>
-        <button id="button " type="button" class="btn btn-primary" routerLink='/nuevoproyecto' *ngIf="rolAdmin">NUEVA
-                EXPERIENCIA</button>
+        <button id="button " type="button" class="btn btn-primary" routerLink='/nuevoproyecto' *ngIf="rolAdmin">NUEVO PROYECTO</button>
         
         <div class="card w-150 mt-3 mb-3" *ngFor="let proyecto of proyectos">
                 <div class="card-body rounded border border-light ">
-                        <p><span class="empresa">NOMBRE DE LA EMPRESA:</span></p>
+                        <p><span class="empresa">NOMBRE DEL PROYECTO:</span></p>
         
         
                         <h5 class="card-title">{{proyecto.nombreProyecto}}</h5>
-                        <br>
-                        <br>
-                        <p><span class="descripcion">DESCRIPCION DEL EMPLEO:</span> </p>
+                        
+                        <p><span class="descripcion">DESCRIPCION DEL PROYECTO:</span> </p>
         
                         <p class="card-text">{{proyecto.descripcionProyecto}}</p>
+                        <p class="card-text">{{proyecto.fecha}}</p>
+                        <p class="card-text">{{proyecto.imgProyecto}}</p>
                         <button *ngIf="rolAdmin" class="btn btn-secondary" routerLink="/editexp/{{proyecto.id}}">
                                 <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
                         </button>
@@ -49,18 +52,19 @@
     
     
     
-    <div class="col-lg-6" id="contenedor">
+                <div class="col-lg-6" id="contenedor">
                 
                 <h4>proximamente...</h4>
                 <img class="img-fluid" src="../../../assets/working.png" alt="working" id="working">
+                 </div>
+
+
+
+
+
+
+
+                </div>
+
         </div>
-
-
-
-
-
-
-
-</div>
-
 </div>

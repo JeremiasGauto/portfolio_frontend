@@ -1,6 +1,4 @@
-* {
-  background-color: #765898;
-}
+
 .row {
   padding-top: 2%;
   padding-bottom: 20%;
@@ -29,4 +27,41 @@ h4 {
 .container-fluid {
   padding: 0;
   margin: 0;
+  background-color: #765898;
+
+  
+}
+
+#edit {
+  color: rgb(7, 255, 7);
+  background-color: transparent;
+}
+
+#trash {
+  color: rgb(255, 0, 0);
+  background-color: transparent;
+}
+
+.card-body,
+P,
+H5,
+span {
+  background-color: rgb(47, 52, 56);
+}
+.empresa {
+  font-weight: bold;
+  color: rgb(204, 19, 66);
+}
+
+.descripcion {
+  font-weight: bold;
+  color: rgb(74, 89, 173);
+}
+
+.card-text{
+  color: aliceblue;
+}
+
+.btn-secondary {
+  border-color: black;
 }
