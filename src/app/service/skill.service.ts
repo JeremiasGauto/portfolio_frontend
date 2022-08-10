@@ -8,7 +8,8 @@ import { Skill } from '../model/skill';
 })
 export class SkillService {
 
-SkillURL = 'http://localhost:8080/skill/'
+  SkillURL = 'http://localhost:8080/skill/';
+
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Skill[]>{
@@ -24,8 +25,8 @@ SkillURL = 'http://localhost:8080/skill/'
     return this.httpClient.post<any>(this.SkillURL +'nueva', skill);
   }
 
-  public update(id: number, skill: Skill): Observable<any>{    
-    return this.httpClient.put<any>(this.SkillURL +`edit/skill/${id}`, skill)
+  public update(skilla: Skill): Observable<Skill>{    
+    return this.httpClient.put<Skill>(this.SkillURL + 'edit', skilla);
   }
 
   public delete(id: number): Observable<any>{

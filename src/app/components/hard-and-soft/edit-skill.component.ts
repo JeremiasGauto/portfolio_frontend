@@ -27,7 +27,7 @@ export class EditSkillComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.skillService.update(id, this.skills).subscribe(
+    this.skillService.update(this.skills).subscribe(
       data => {
         this.router.navigate(['home']);
       }, err => {
