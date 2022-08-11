@@ -21,7 +21,7 @@
 
 
 
-        <form [formGroup]="form" (ngSubmit)="agregarUsuario()">
+        <form [formGroup]="form" (ngSubmit)="agregarExperiencia()">
           <div class="mb-3">
             <label for="nombreE" class="col-form-label">Nombre de la Empresa:</label>
             <input type="text" class="form-control" id="nombreE" name="nombreE" formControlName="nombreE">
@@ -33,7 +33,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink='/home'>Close</button>
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Editar Experiencia</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar Experiencia</button>
           </div>
         </form>
       </div>
@@ -47,7 +47,7 @@
 <!-- Button trigger modal agregar EXPERIENCIA -->
       <button id="button " type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarExperiencia" *ngIf="rolAdmin">NUEVA
         EXPERIENCIA</button>
-
+<!--***********************************************************************************-->
       <div class="card w-150 mt-3 mb-3" *ngFor="let experiencia of exper">
         <div class="card-body rounded border border-light ">
           <p><span class="empresa">NOMBRE DE LA EMPRESA:</span></p>

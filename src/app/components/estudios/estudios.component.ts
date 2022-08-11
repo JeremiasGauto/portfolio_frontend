@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faEdit, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
@@ -13,9 +14,19 @@ export class EstudiosComponent implements OnInit {
   educacion: Educacion[] = []
 
   faEdit = faEdit
-  faTrashCan=faTrashCan
+  faTrashCan = faTrashCan
   
-  constructor(private educacionS: EducacionService, private tokenService: TokenService) { }
+
+  
+  form: FormGroup;
+
+  constructor(private educacionS: EducacionService, private tokenService: TokenService, private fb: FormBuilder) { 
+    
+     this.form = this.fb.group({
+      nombreE: ['', Validators.required],
+      descripcionE:['', Validators.required]
+    })
+  }
   isLogged = false;
 
   ngOnInit(): void {
@@ -46,7 +57,23 @@ export class EstudiosComponent implements OnInit {
   }
 
   rolAdmin = this.tokenService.getAuthorities().includes('ROLE_ADMIN')
+
   
+  agregarEducacion() {   
+     
+    const est: Educacion= {
+      nombreE: this.form.value.nombreE,
+      descripcionE: this.form.value.descripcionE
+    }
+    
+    this.educacionS.save(est).subscribe(data => {
+      this.educacion.push(est);
+      this.form.reset()
+      
+
+    });
   
+    
+  }
 
 }

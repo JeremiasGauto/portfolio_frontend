@@ -62,7 +62,7 @@ export class ExperienciaComponent implements OnInit {
   
   rolAdmin = this.tokenService.getAuthorities().includes('ROLE_ADMIN')
 
-  agregarUsuario() {
+  agregarExperiencia() {
     
      
     const exp: Experiencia= {
@@ -72,11 +72,12 @@ export class ExperienciaComponent implements OnInit {
     
     this.servExperiencia.save(exp).subscribe(data => {
       this.exper.push(exp)
+      this.form.reset()
       
 
     });
   
-    CloseEvent
+    
   }
   
 }

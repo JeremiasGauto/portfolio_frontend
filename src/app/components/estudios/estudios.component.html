@@ -4,11 +4,50 @@
     <div class=" col-sm-1 col-md-1 col-lg-1"></div>
 
     <div class=" col-sm-10 col-md-10 col-lg-10 ">
+
+
+      <!-- Modal agregar EDUACION-->
+      <div class="modal fade" id="agregarEducacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">NUEVA EDUCACION</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+      
+      
+      
+              <form [formGroup]="form" (ngSubmit)="agregarEducacion()">
+                <div class="mb-3">
+                  <label for="nombreE" class="col-form-label">Nombre de la Educacion:</label>
+                  <input type="text" class="form-control" id="nombreE" name="nombreE" formControlName="nombreE">
+                </div>
+                <div class="mb-3">
+                  <label for="descripcionE" class="col-form-label">Descripcion de la educacion:</label>
+                  <input type="text" class="form-control" name="descripcionE" id="descripcionE"
+                    formControlName="descripcionE">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink='/home'>Close</button>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar Educacion</button>
+                </div>
+              </form>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      <!--FIN DE MODAL AGREGAR EEDUCACION-->
+
+
+
       <h1>Estudios</h1>
-
-      <button id="button " type="button" class="btn btn-primary" routerLink='/nuevaedu' *ngIf="rolAdmin">NUEVA
+<!-- Button trigger modal AGREGAR EDUCACION ---------------------------------------------------------------------------------------------------->
+      <button id="button " type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#agregarEducacion"*ngIf="rolAdmin">NUEVA
         EDUCACION</button>
-
+<!--******************************************************************************************************************************************-->
       <div class="card w-150 mt-3 mb-3" *ngFor="let educ of educacion">
         <div class="card-body rounded border border-light ">
           <p><span class="empresa">NOMBRE DEL ESTABLECIMIENTO:</span></p>
