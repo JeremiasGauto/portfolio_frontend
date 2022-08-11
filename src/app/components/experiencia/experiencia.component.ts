@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faEdit } from '@fortawesome/free-regular-svg-icons';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
@@ -18,10 +19,19 @@ export class ExperienciaComponent implements OnInit {
   exper: Experiencia[] = [];
   usuario: AuthService
   
-  faEdit = faEdit
-  faTrashCan=faTrashCan
 
-  constructor(private servExperiencia: ServExperienciaService, private tokenService: TokenService, router: Router, authService: AuthService) { }
+  faEdit = faEdit
+  faTrashCan = faTrashCan
+  
+  form: FormGroup;
+
+  constructor(private servExperiencia: ServExperienciaService, private tokenService: TokenService, router: Router, authService: AuthService, private fb: FormBuilder) { 
+    this.form = this.fb.group({
+      nombreE: ['', Validators.required],
+      descripcionE:['', Validators.required]
+    })
+
+  }
   isLogged = false;
    
   
@@ -52,6 +62,22 @@ export class ExperienciaComponent implements OnInit {
   
   rolAdmin = this.tokenService.getAuthorities().includes('ROLE_ADMIN')
 
+  agregarUsuario() {
+    
+     
+    const exp: Experiencia= {
+      nombreE: this.form.value.nombreE,
+      descripcionE: this.form.value.descripcionE
+    }
+    
+    this.servExperiencia.save(exp).subscribe(data => {
+      this.exper.push(exp)
+      
+
+    });
+  
+    CloseEvent
+  }
   
 }
 
