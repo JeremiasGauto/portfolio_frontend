@@ -5,49 +5,49 @@
 
     <div class=" col-sm-10 col-md-10 col-lg-10 ">
 
-<!-- Button trigger modal agregar EXPERIENCIA -->
 
 
-<!-- Modal agregar EXPERIENCIA-->
-<div class="modal fade" id="agregarExperiencia" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">NUEVA EXPERIENCIA</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <!-- Modal agregar EXPERIENCIA-->
+      <div class="modal fade" id="agregarExperiencia" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">NUEVA EXPERIENCIA</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <form [formGroup]="form" (ngSubmit)="agregarExperiencia()">
+                <div class="mb-3">
+                  <label for="nombreE" class="col-form-label">Nombre de la Empresa:</label>
+                  <input type="text" class="form-control" id="nombreE" name="nombreE" formControlName="nombreE">
+                </div>
+                <div class="mb-3">
+                  <label for="descripcionE" class="col-form-label">Descripcion de la empresa:</label>
+                  <input type="text" class="form-control" name="descripcionE" id="descripcionE"
+                    formControlName="descripcionE">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    routerLink='/home'>Close</button>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar Experiencia</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-
-
-
-        <form [formGroup]="form" (ngSubmit)="agregarExperiencia()">
-          <div class="mb-3">
-            <label for="nombreE" class="col-form-label">Nombre de la Empresa:</label>
-            <input type="text" class="form-control" id="nombreE" name="nombreE" formControlName="nombreE">
-          </div>
-          <div class="mb-3">
-            <label for="descripcionE" class="col-form-label">Descripcion de la empresa:</label>
-            <input type="text" class="form-control" name="descripcionE" id="descripcionE" 
-            formControlName="descripcionE">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink='/home'>Close</button>
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar Experiencia</button>
-          </div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-</div>
-<!--FIN DE MODAL AGREGAR EXPERIENCIA-->
+      <!--FIN DE MODAL AGREGAR EXPERIENCIA-->
 
       <h1>Experiencia laboral</h1>
-<!-- Button trigger modal agregar EXPERIENCIA -->
-      <button id="button " type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarExperiencia" *ngIf="rolAdmin">NUEVA
+      <!-- Button trigger modal agregar EXPERIENCIA -->
+      <button id="button " type="button" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#agregarExperiencia" *ngIf="rolAdmin">NUEVA
         EXPERIENCIA</button>
-<!--***********************************************************************************-->
+      <!--***********************************************************************************-->
       <div class="card w-150 mt-3 mb-3" *ngFor="let experiencia of exper">
         <div class="card-body rounded border border-light ">
           <p><span class="empresa">NOMBRE DE LA EMPRESA:</span></p>
