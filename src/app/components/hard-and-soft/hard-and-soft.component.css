@@ -18,6 +18,7 @@ h1 {
 
 .container-fluid {
   padding: 0;
+  margin-top: 3rem;
 }
 
 p {
@@ -34,9 +35,7 @@ p {
   background-color: transparent;
 }
 
-.btn-primary {
-  margin-top: 5rem;
-}
+
 
 .margen {
   margin-bottom: 4rem;
@@ -58,3 +57,10 @@ p {
   padding-left: 50px;
 }
 
+.top{
+  position: relative;
+  top: 14rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  
+}

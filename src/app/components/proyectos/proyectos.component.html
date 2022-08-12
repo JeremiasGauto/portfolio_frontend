@@ -4,11 +4,64 @@
         <div class=" col-sm-1 col-md-1 col-lg-1"></div>
 
         <div class=" col-sm-10 col-md-10 col-lg-10 ">
+
+
+<!-- Modal agregar EXPERIENCIA------------------------------------>
+<div class="modal fade" id="agregarProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">NUEVO PROYECTO</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                                <form [formGroup]="form" (ngSubmit)="agregarProyecto()">
+                                        <div class="mb-3">
+                                                <label for="nombreProyecto" class="col-form-label">Nombre del proyecto:</label>
+                                                <input type="text" class="form-control" id="nombreProyecto"
+                                                        name="nombreProyecto" formControlName="nombreProyecto">
+                                        </div>
+                                        <div class="mb-3">
+                                                <label for="fecha" class="col-form-label">Fecha de proyecto:</label>
+                                                <input type="text" class="form-control" name="fecha" id="fecha"
+                                                        formControlName="fecha">
+                                        </div>
+                                        <div class="mb-3">
+                                                <label for="descripcionProyecto" class="col-form-label">Descripcion del proyecto:</label>
+                                                <input type="text" class="form-control" name="descripcionProyecto"
+                                                        id="descripcionProyecto" formControlName="descripcionProyecto">
+                                        </div>
+                                        <div class="mb-3">
+                                                <label for="imgProyecto" class="col-form-label">Imagen del proyecto:</label>
+                                                <input type="text" class="form-control" name="imgProyecto" id="imgProyecto"
+                                                        formControlName="imgProyecto">
+                                        </div>
+                                        <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary"
+                                                        data-bs-dismiss="modal">Agregar Proyecto</button>
+                                        </div>
+                                </form>
+                        </div>
+
+                </div>
+        </div>
+</div>
+<!--FIN DE MODAL AGREGAR EXPERIENCIA-->
+
+
+
         <h1>Proyectos realizados</h1>
     <br>
     <br>
-        <button id="button " type="button" class="btn btn-primary" routerLink='/nuevoproyecto' *ngIf="rolAdmin">NUEVO PROYECTO</button>
-        
+<!-- Button trigger modal agregar PROYECTO ------------------------------------------------>
+        <button id="button " type="button" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#agregarProyecto" *ngIf="rolAdmin">NUEVO PROYECTO</button>
+<!--***********************************************************************************-->
         <div class="card w-150 mt-3 mb-3" *ngFor="let proyecto of proyectos">
                 <div class="card-body rounded border border-light ">
                         <p><span class="empresa">NOMBRE DEL PROYECTO:</span></p>
@@ -17,9 +70,11 @@
                         <h5 class="card-title">{{proyecto.nombreProyecto}}</h5>
                         
                         <p><span class="descripcion">DESCRIPCION DEL PROYECTO:</span> </p>
-        
-                        <p class="card-text">{{proyecto.descripcionProyecto}}</p>
+                           <p class="card-text">{{proyecto.descripcionProyecto}}</p>
+
+                        <p><span class="descripcion">FECHA DE REALIZACION DEL PROYECTO:</span> </p>
                         <p class="card-text">{{proyecto.fecha}}</p>
+                        <p><span class="descripcion">IMAGEN DEL PROYECTO:</span> </p>
                         <p class="card-text">{{proyecto.imgProyecto}}</p>
                         <button *ngIf="rolAdmin" class="btn btn-secondary" routerLink="/editexp/{{proyecto.id}}">
                                 <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar

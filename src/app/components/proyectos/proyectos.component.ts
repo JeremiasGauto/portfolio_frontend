@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faEdit, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Proyecto } from 'src/app/model/proyecto';
@@ -20,7 +21,17 @@ export class ProyectosComponent implements OnInit {
   faTrashCan = faTrashCan
   isLogged = false;
 
-  constructor(private proyectoService: ProyectoService, private tokenService: TokenService,private  router: Router, authService: AuthService) { }
+  form: FormGroup;
+
+  constructor(private proyectoService: ProyectoService, private tokenService: TokenService, private router: Router, authService: AuthService, private fb: FormBuilder) { 
+    this.form = this.fb.group({      
+      nombreProyecto: ['', Validators.required],
+      fecha: ['', Validators.required],
+      descripcionProyecto: ['', Validators.required],
+      imgProyecto:['', Validators.required],
+    })
+
+  }
 
  ngOnInit(): void {
     this.cargarExperiencia();
@@ -49,6 +60,24 @@ export class ProyectosComponent implements OnInit {
   
   rolAdmin = this.tokenService.getAuthorities().includes('ROLE_ADMIN')
 
+  agregarProyecto() {
+    
+     
+    const proye: Proyecto = {
+      nombreProyecto: this.form.value.nombreProyecto,
+      fecha: this.form.value.fecha,
+      descripcionProyecto: this.form.value.descripcionProyecto,
+      imgProyecto:this.form.value.imgProyecto
+    }
+    
+    this.proyectoService.save(proye).subscribe(data => {
+      this.proyectos.push(proye)
+      this.form.reset()
+      
+
+    });
   
+    
+  }
 
 }

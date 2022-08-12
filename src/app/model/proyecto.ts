@@ -1,6 +1,6 @@
 export class Proyecto {
 
-    id: number;
+    id? :number;
     nombreProyecto: string;
     fecha: number;
     descripcionProyecto: string;
