@@ -53,7 +53,7 @@
             </div>
             <div class="modal-body">
 
-              <form [formGroup]="form" (ngSubmit)="agregarExperiencia()">
+              <form [formGroup]="form" (ngSubmit)="edita()">
                 <div class="mb-3">
                   <label for="nombreE" class="col-form-label">Nombre de la Empresa:</label>
                   <input type="text" class="form-control" id="nombreE" name="nombreE" formControlName="nombreE">
@@ -66,7 +66,7 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                     routerLink='/home'>Close</button>
-                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">EDITAR Experiencia</button>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >EDITAR Experiencia</button>
                 </div>
               </form>
             </div>
