@@ -93,7 +93,7 @@
           <p><span class="descripcion">DESCRIPCION DEL EMPLEO:</span> </p>
 
           <p class="card-text">{{experiencia.descripcionE}}</p>
-          <button *ngIf="rolAdmin" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editarExperiencia" (click)="editarExperiencia(experiencia)" >
+          <button *ngIf="rolAdmin" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editarExperiencia" (click)="traeEditarExperiencia(experiencia)" >
             <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
           </button>
           <button *ngIf="rolAdmin" class="btn btn-secondary" (click)="delete(experiencia.id)">

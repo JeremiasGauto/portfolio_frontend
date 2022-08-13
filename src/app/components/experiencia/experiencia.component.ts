@@ -73,6 +73,7 @@ export class ExperienciaComponent implements OnInit {
     this.servExperiencia.save(exp).subscribe(data => {
       this.exper.push(exp)
       this.form.reset()
+      this.cargarExperiencia()
       
 
     });
@@ -80,7 +81,7 @@ export class ExperienciaComponent implements OnInit {
     
   }
  
-  editarExperiencia(experiencia: any) {
+  traeEditarExperiencia(experiencia: any) {
     this.experi.id=experiencia.id
     this.form.controls['nombreE'].setValue(experiencia.nombreE);
     this.form.controls['descripcionE'].setValue(experiencia.descripcionE);
