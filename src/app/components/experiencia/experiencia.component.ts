@@ -79,6 +79,13 @@ export class ExperienciaComponent implements OnInit {
   
     
   }
-  
+ 
+  editarExperiencia(persona: Experiencia) {
+    this.form.patchValue({
+      nombreE:persona.nombreE,
+      descripcionE:persona.descripcionE})
+    
+  }
+
 }
 
