@@ -42,6 +42,40 @@
       </div>
       <!--FIN DE MODAL AGREGAR EXPERIENCIA-->
 
+      <!-- Modal EDITAR EXPERIENCIA-->
+      <div class="modal fade" id="editarExperiencia" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">EDITAR EXPERIENCIA</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <form [formGroup]="form" (ngSubmit)="agregarExperiencia()">
+                <div class="mb-3">
+                  <label for="nombreE" class="col-form-label">Nombre de la Empresa:</label>
+                  <input type="text" class="form-control" id="nombreE" name="nombreE" formControlName="nombreE">
+                </div>
+                <div class="mb-3">
+                  <label for="descripcionE" class="col-form-label">Descripcion de la empresa:</label>
+                  <input type="text" class="form-control" name="descripcionE" id="descripcionE"
+                    formControlName="descripcionE">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    routerLink='/home'>Close</button>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">EDITAR Experiencia</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!--FIN DE MODAL EDITAR EXPERIENCIA-->
+
       <h1>Experiencia laboral</h1>
       <!-- Button trigger modal agregar EXPERIENCIA -->
       <button id="button " type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -59,7 +93,7 @@
           <p><span class="descripcion">DESCRIPCION DEL EMPLEO:</span> </p>
 
           <p class="card-text">{{experiencia.descripcionE}}</p>
-          <button *ngIf="rolAdmin" class="btn btn-secondary" routerLink="/editexp/{{experiencia.id}}">
+          <button *ngIf="rolAdmin" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editarExperiencia">
             <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
           </button>
           <button *ngIf="rolAdmin" class="btn btn-secondary" (click)="delete(experiencia.id)">
@@ -75,5 +109,5 @@
 
 
     </div>
-    </div>
-    </div>
+  </div>
+</div>
