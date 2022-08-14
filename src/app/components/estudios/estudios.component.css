@@ -72,3 +72,15 @@ p {
 .btn-dark {
   border-color: var(--bs-white);
 }
+
+#imagenadju {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: grey;
+}
+
+#thumb {
+  background-color: rgb(47, 52, 56);
+  height: auto;
+}

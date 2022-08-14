@@ -81,7 +81,9 @@
       <button id="button " type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#agregarEducacion"*ngIf="rolAdmin">NUEVA
         EDUCACION</button>
 <!--******************************************************************************************************************************************-->
-      <div class="card w-150 mt-3 mb-3" *ngFor="let educ of educacion">
+      <div class="card w-150 mt-3 mb-3" *ngFor="let educ of educacion" id="imagenadju">
+
+        <div class=" col-sm-10 col-md-10 col-lg-10">
         <div class="card-body rounded border border-light ">
           <p><span class="empresa">NOMBRE DEL ESTABLECIMIENTO:</span></p>
 
@@ -101,9 +103,15 @@
             <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar
           </button>
         </div>
+        </div>
+
+        <div class=" col-sm-2 col-md-2 col-lg-2" id="thumb">
+          <!--foto thumbnail de la experiencia-->
+          <img src="../../../assets/cemic0.jpg" alt="..." class="img-thumbnail">
+        </div>
       </div>
 
-
+      <div class=" col-sm-1 col-md-1 col-lg-1 "></div>
 
 
 
