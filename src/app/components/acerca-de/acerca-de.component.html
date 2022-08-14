@@ -1,6 +1,19 @@
 <div class="container-fluid">
 
   <div class="row">
+
+      <div class="col-sm-4 col-md-4 col-lg-4" >
+        <app-intro></app-intro>
+        
+      </div>
+      
+      
+      
+      <img class="img-fluid" id="banner" src="../../../assets/bannerdef.png" alt="banner" />
+      
+      <img class="img-fluid" id="banner2" src="../../../assets/bannerdef2.png" alt="banner" />
+
+
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
 
 <!-- Modal EDITAR ACERCA DE-->
@@ -47,13 +60,16 @@
 </div>
 <!--FIN DE MODAL EDITAR ACERCA DE-->
 
+
+
+
+
+
+
       <img src={{persona.img}} class="img-fluid" alt="yo" id="yo" />
     </div>
 
-    <button *ngIf="rolAdmin" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editarPerfil"
-      (click)="traeEditaPerfil(persona)">
-      <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar Perfil
-    </button>
+   
 
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
       <p id="nombre">{{ persona.nombre+" "+persona.apellido }}</p>
@@ -67,7 +83,13 @@
 
       </p>
     </div>
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+    <button *ngIf="rolAdmin" class="btn btn-primary col-sm-10 col-md-10 col-lg-10" data-bs-toggle="modal" data-bs-target="#editarPerfil"
+      (click)="traeEditaPerfil(persona)">
+      <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar Perfil
+    </button>
+
     <hr />
   </div>
-
+ 
 </div>

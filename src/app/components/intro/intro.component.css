@@ -5,9 +5,10 @@
 span {
   color: rgb(124, 154, 211);
   display: block;
-
   animation-name: nombreAparicion;
   animation-duration: 0.5s;
+  font-size:3rem
+  
 }
 
 #introduccion {
@@ -17,12 +18,14 @@ span {
   justify-content: center;
   flex-direction: column;
   z-index: 1000;
+  
 }
 
 h3 {
   animation-name: nombreAparicion;
   animation-duration: 3s;
   color: rgb(191 35 120);
+  
 }
 .nombre {
   /* display:inline; */
@@ -30,6 +33,7 @@ h3 {
   transition: all 3s ease;
   animation-name: nombreAparicion;
   animation-duration: 2s;
+  
 }
 .nombre:hover {
   cursor: pointer;
@@ -46,8 +50,9 @@ h3 {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   #introduccion {
     display: none;
   }
 }
+
