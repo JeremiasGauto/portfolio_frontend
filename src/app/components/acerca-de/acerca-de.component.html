@@ -2,8 +2,58 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+
+<!-- Modal EDITAR ACERCA DE-->
+<div class="modal fade" id="editarPerfil" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">EDITAR PERFIL</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="form" (ngSubmit)="edita()">
+          <div class="mb-3">
+            <label for="nombre" class="col-form-label">Nombre de la Persona:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" formControlName="nombre">
+          </div>
+          <div class="mb-3">
+            <label for="apellido" class="col-form-label">Apellido de la persona:</label>
+            <input type="text" class="form-control" name="apellido" id="apellido" formControlName="apellido">
+          </div>
+          <div class="mb-3">
+            <label for="img" class="col-form-label">Imagen de perfil:</label>
+            <input type="text" class="form-control" name="img" id="img" formControlName="img">
+          </div>
+          <div class="mb-3">
+            <label for="acercaDe" class="col-form-label">Acerca de perfil:</label>
+            <input type="text" class="form-control" name="acercaDe" id="acercaDe" formControlName="acercaDe">
+          </div>
+          <div class="mb-3">
+            <label for="bannerPersonal" class="col-form-label">Banner de perfil:</label>
+            <input type="text" class="form-control" name="bannerPersonal" id="bannerPersonal" formControlName="bannerPersonal">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink='/home'>Close</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">EDITAR SKILL</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--FIN DE MODAL EDITAR ACERCA DE-->
+
       <img src={{persona.img}} class="img-fluid" alt="yo" id="yo" />
     </div>
+
+    <button *ngIf="rolAdmin" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editarPerfil"
+      (click)="traeEditaPerfil(persona)">
+      <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar Perfil
+    </button>
 
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
       <p id="nombre">{{ persona.nombre+" "+persona.apellido }}</p>
