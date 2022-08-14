@@ -21,7 +21,7 @@ import { RouterModule, ROUTES } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { interceptorProvider, InterceptorService } from './service/interceptor-service';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
+
 
 
 
@@ -40,7 +40,7 @@ import { NewProyectoComponent } from './components/proyectos/new-proyecto.compon
     HomeComponent,
     LoginComponent,
     NotfoundComponent,
-    NewProyectoComponent,
+
     
     
   ],

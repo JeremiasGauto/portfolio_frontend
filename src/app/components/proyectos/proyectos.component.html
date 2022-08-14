@@ -6,7 +6,7 @@
         <div class=" col-sm-10 col-md-10 col-lg-10 ">
 
 
-<!-- Modal agregar EXPERIENCIA------------------------------------>
+<!-- Modal agregar PROYECTO------------------------------------>
 <div class="modal fade" id="agregarProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -51,7 +51,55 @@
                 </div>
         </div>
 </div>
-<!--FIN DE MODAL AGREGAR EXPERIENCIA-->
+<!--FIN DE MODAL AGREGAR PROYECTO-->
+
+<!-- Modal EDITAR PROYECTO-->
+<div class="modal fade" id="editarProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">EDITAR PROYECTO</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                                <form [formGroup]="form" (ngSubmit)="edita()">
+                                        <div class="mb-3">
+                                                <label for="nombreProyecto" class="col-form-label">Nombre del
+                                                        PROYECTO:</label>
+                                                <input type="text" class="form-control" id="nombreProyecto"
+                                                        name="nombreProyecto" formControlName="nombreProyecto">
+                                        </div>
+                                        <div class="mb-3">
+                                                <label for="fecha" class="col-form-label">fecha del proyecto:</label>
+                                                <input type="text" class="form-control" name="fecha" id="fecha"
+                                                        formControlName="fecha">
+                                        </div>
+                                        <div class="mb-3">
+                                                <label for="descripcionProyecto" class="col-form-label">descripcion del proyecto:</label>
+                                                <input type="text" class="form-control" name="descripcionProyecto"
+                                                        id="descripcionProyecto" formControlName="descripcionProyecto">
+                                        </div>
+                                        <div class="mb-3">
+                                                <label for="imgProyecto" class="col-form-label">imagen del proyecto</label>
+                                                <input type="text" class="form-control" name="imgProyecto" id="imgProyecto"
+                                                        formControlName="imgProyecto">
+                                        </div>
+                                        <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                                        routerLink='/home'>Close</button>
+                                                <button type="submit" class="btn btn-primary"
+                                                        data-bs-dismiss="modal">EDITAR PROYECTO</button>
+                                        </div>
+                                </form>
+                        </div>
+
+                </div>
+        </div>
+</div>
+<!--FIN DE MODAL EDITAR PROYECTO-->
 
 
 
@@ -76,7 +124,8 @@
                         <p class="card-text">{{proyecto.fecha}}</p>
                         <p><span class="descripcion">IMAGEN DEL PROYECTO:</span> </p>
                         <p class="card-text">{{proyecto.imgProyecto}}</p>
-                        <button *ngIf="rolAdmin" class="btn btn-secondary" routerLink="/editexp/{{proyecto.id}}">
+                        <button *ngIf="rolAdmin" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editarProyecto"
+            (click)="traeEditaProyecto(proyecto)">
                                 <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
                         </button>
                         <button *ngIf="rolAdmin" class="btn btn-secondary" (click)="delete(proyecto.id)">

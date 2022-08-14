@@ -16,7 +16,7 @@ export class ProyectosComponent implements OnInit {
 
   proyectos: Proyecto[] = [];
   usuario: AuthService
-  
+  proye: Proyecto= new Proyecto('',0,'','');
   faEdit = faEdit
   faTrashCan = faTrashCan
   isLogged = false;
@@ -34,7 +34,7 @@ export class ProyectosComponent implements OnInit {
   }
 
  ngOnInit(): void {
-    this.cargarExperiencia();
+    this.cargarProyecto();
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
@@ -42,7 +42,7 @@ export class ProyectosComponent implements OnInit {
     }
   }
   
-  cargarExperiencia(): void {
+  cargarProyecto(): void {
     this.proyectoService.lista().subscribe(
       data => { this.proyectos = data; } )
  }
@@ -50,7 +50,7 @@ export class ProyectosComponent implements OnInit {
   delete(id?: number) {
     if (id != undefined) {
       this.proyectoService.delete(id).subscribe(data => { 
-        this.cargarExperiencia();
+        this.cargarProyecto();
       }, err => {
         alert("No se puede eliminar experiencia")
       })
@@ -79,5 +79,29 @@ export class ProyectosComponent implements OnInit {
   
     
   }
+
+  traeEditaProyecto(proyecto: any) {
+    this.proye.id=proyecto.id
+    this.form.controls['nombreProyecto'].setValue(proyecto.nombreProyecto);
+    this.form.controls['fecha'].setValue(proyecto.fecha);
+    this.form.controls['descripcionProyecto'].setValue(proyecto.descripcionProyecto);
+    this.form.controls['imgProyecto'].setValue(proyecto.imgProyecto);
+    
+
+  }
+
+  edita() {
+    this.proye.nombreProyecto = this.form.value.nombreProyecto;
+    this.proye.fecha = this.form.value.fecha;
+    this.proye.descripcionProyecto = this.form.value.descripcionProyecto;
+    this.proye.imgProyecto = this.form.value.imgProyecto;
+    this.proyectoService.update( this.proye).subscribe(res => {
+      alert("proyecto editada con exito");
+      this.form.reset();
+      this.cargarProyecto();
+    })
+
+  }
+
 
 }
