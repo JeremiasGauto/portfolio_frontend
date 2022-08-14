@@ -41,6 +41,39 @@
       </div>
       <!--FIN DE MODAL AGREGAR EEDUCACION-->
 
+      <!-- Modal EDITAR ESTUDIOS-->
+      <div class="modal fade" id="editarEstudios" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">EDITAR ESTUDIOS</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+      
+              <form [formGroup]="form" (ngSubmit)="edita()">
+                <div class="mb-3">
+                  <label for="nombreE" class="col-form-label">Nombre del estudio:</label>
+                  <input type="text" class="form-control" id="nombreE" name="nombreE" formControlName="nombreE">
+                </div>
+                <div class="mb-3">
+                  <label for="descripcionE" class="col-form-label">Descripcion del estudio:</label>
+                  <input type="text" class="form-control" name="descripcionE" id="descripcionE"
+                    formControlName="descripcionE">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">EDITAR ESTUDIO</button>
+                </div>
+              </form>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      <!--FIN DE MODAL EDITAR ESTUDIOS-->
+
 
 
       <h1>Estudios</h1>
@@ -60,7 +93,7 @@
 
           <p class="card-text">{{educ.descripcionE}}</p>
           
-          <button *ngIf="rolAdmin" class="btn btn-dark" routerLink="/editedu/{{educ.id}}">
+          <button *ngIf="rolAdmin" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editarEstudios" (click)="traeEditarEducacion(educ)">
             <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
           </button>
           <button *ngIf="rolAdmin" class="btn btn-dark" (click)="delete(educ.id)">

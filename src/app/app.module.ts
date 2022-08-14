@@ -20,10 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, ROUTES } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { interceptorProvider, InterceptorService } from './service/interceptor-service';
-import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
-import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
-import { NeweducacionComponent } from './components/estudios/neweducacion.component';
-import { EditeducacionComponent } from './components/estudios/editeducacion.component';
+
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { EditSkillComponent } from './components/hard-and-soft/edit-skill.component';
 import { NewSkillComponent } from './components/hard-and-soft/new-skill.component';
@@ -45,10 +42,6 @@ import { NewProyectoComponent } from './components/proyectos/new-proyecto.compon
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    NewExperienciaComponent,
-    EditExperienciaComponent,
-    NeweducacionComponent,
-    EditeducacionComponent,
     NotfoundComponent,
     EditSkillComponent,
     NewSkillComponent,

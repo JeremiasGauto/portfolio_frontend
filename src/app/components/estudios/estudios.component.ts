@@ -15,7 +15,7 @@ export class EstudiosComponent implements OnInit {
 
   faEdit = faEdit
   faTrashCan = faTrashCan
-  
+  edu: Educacion= new Educacion('','');
 
   
   form: FormGroup;
@@ -68,12 +68,32 @@ export class EstudiosComponent implements OnInit {
     
     this.educacionS.save(est).subscribe(data => {
       this.educacion.push(est);
-      this.form.reset()
-      
+      this.form.reset()  
 
-    });
-  
+    }); 
     
   }
+
+
+  traeEditarEducacion(educ: any) {
+    this.edu.id=educ.id
+    this.form.controls['nombreE'].setValue(educ.nombreE);
+    this.form.controls['descripcionE'].setValue(educ.descripcionE);
+    
+
+  }
+
+  edita() {
+    this.edu.nombreE = this.form.value.nombreE;
+    this.edu.descripcionE = this.form.value.descripcionE;
+    this.educacionS.update(this.edu.id, this.edu).subscribe(res => {
+      alert("educacion editada con exito");
+      this.form.reset();
+      this.cargarEducacion();
+    })
+
+  }
+
+
 
 }
