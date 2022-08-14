@@ -44,6 +44,46 @@
       </div>
       <!--FIN DE MODAL AGREGAR EXPERIENCIA-->
 
+
+      <!-- Modal EDITAR EXPERIENCIA-->
+      <div class="modal fade" id="editarSkill" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">EDITAR SKILL</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <form [formGroup]="form" (ngSubmit)="edita()">
+                <div class="mb-3">
+                  <label for="nombreSkill" class="col-form-label">Nombre de la SKILL:</label>
+                  <input type="text" class="form-control" id="nombreSkill" name="nombreSkill"
+                    formControlName="nombreSkill">
+                </div>
+                <div class="mb-3">
+                  <label for="fotoSkill" class="col-form-label">Descripcion de la SKILL:</label>
+                  <input type="text" class="form-control" name="fotoSkill" id="fotoSkill" formControlName="fotoSkill">
+                </div>
+                <div class="mb-3">
+                  <label for="porcentaje" class="col-form-label">porcentaje de la SKILL:</label>
+                  <input type="text" class="form-control" name="porcentaje" id="porcentaje"
+                    formControlName="porcentaje">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    routerLink='/home'>Close</button>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">EDITAR SKILL</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!--FIN DE MODAL EDITAR EXPERIENCIA-->
+
       <!-- Button trigger modal agregar SKILL -->
       <button id="button " type="button" class="btn btn-primary top" data-bs-toggle="modal"
         data-bs-target="#agregarSkill" *ngIf="rolAdmin">AGREGAR NUEVA
@@ -66,7 +106,8 @@
           <h5 class="card-title">{{skillastico.nombreSkill}}</h5>
           <p class="card-text">{{skillastico.nombreSkill}}</p>
 
-          <button *ngIf="rolAdmin" class="btn btn-dark" routerLink="/editskill/{{skillastico.id}}">
+          <button *ngIf="rolAdmin" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editarSkill"
+            (click)="traeEditaSkill(skillastico)">
             <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
           </button>
 

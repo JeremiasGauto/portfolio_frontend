@@ -16,6 +16,7 @@ export class HardAndSoftComponent implements OnInit {
 
   faEdit = faEdit
   faTrashCan = faTrashCan
+  sk: Skill= new Skill('','',0);
   
   form: FormGroup;
   
@@ -79,6 +80,26 @@ agregarSkill() {
     
   }
 
+  traeEditaSkill(skillastico: any) {
+    this.sk.id=skillastico.id
+    this.form.controls['nombreSkill'].setValue(skillastico.nombreSkill);
+    this.form.controls['fotoSkill'].setValue(skillastico.fotoSkill);
+    this.form.controls['porcentaje'].setValue(skillastico.porcentaje);
+    
+
+  }
+
+  edita() {
+    this.sk.nombreSkill = this.form.value.nombreSkill;
+    this.sk.fotoSkill = this.form.value.fotoSkill;
+    this.sk.porcentaje = this.form.value.porcentaje;
+    this.skillservice.update( this.sk).subscribe(res => {
+      alert("skill editada con exito");
+      this.form.reset();
+      this.cargarSkill();
+    })
+
+  }
 
 
 
