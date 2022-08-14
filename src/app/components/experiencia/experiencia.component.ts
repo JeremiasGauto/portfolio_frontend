@@ -18,17 +18,17 @@ import { TokenService } from 'src/app/service/token.service';
 export class ExperienciaComponent implements OnInit {
   exper: Experiencia[] = [];
   usuario: AuthService
-  
+  experi: Experiencia= new Experiencia('','');
 
   faEdit = faEdit
   faTrashCan = faTrashCan
   
   form: FormGroup;
 
-  constructor(private servExperiencia: ServExperienciaService, private tokenService: TokenService, router: Router, authService: AuthService, private fb: FormBuilder) { 
+  constructor(private servExperiencia: ServExperienciaService, private tokenService: TokenService, router: Router, authService: AuthService, private fb: FormBuilder) {
     this.form = this.fb.group({
       nombreE: ['', Validators.required],
-      descripcionE:['', Validators.required]
+      descripcionE: ['', Validators.required]
     })
 
   }
@@ -40,18 +40,18 @@ export class ExperienciaComponent implements OnInit {
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
-    this.isLogged = false;
+      this.isLogged = false;
     }
   }
   
   cargarExperiencia(): void {
     this.servExperiencia.lista().subscribe(
-      data => { this.exper = data; } )
- }
+      data => { this.exper = data; })
+  }
 
   delete(id?: number) {
     if (id != undefined) {
-      this.servExperiencia.delete(id).subscribe(data => { 
+      this.servExperiencia.delete(id).subscribe(data => {
         this.cargarExperiencia();
       }, err => {
         alert("No se puede eliminar experiencia")
@@ -65,7 +65,7 @@ export class ExperienciaComponent implements OnInit {
   agregarExperiencia() {
     
      
-    const exp: Experiencia= {
+    const exp: Experiencia = {
       nombreE: this.form.value.nombreE,
       descripcionE: this.form.value.descripcionE
     }
@@ -73,12 +73,31 @@ export class ExperienciaComponent implements OnInit {
     this.servExperiencia.save(exp).subscribe(data => {
       this.exper.push(exp)
       this.form.reset()
+      this.cargarExperiencia()
       
 
     });
   
     
   }
-  
-}
+ 
+  traeEditarExperiencia(experiencia: any) {
+    this.experi.id=experiencia.id
+    this.form.controls['nombreE'].setValue(experiencia.nombreE);
+    this.form.controls['descripcionE'].setValue(experiencia.descripcionE);
+    
 
+  }
+
+  edita() {
+    this.experi.nombreE = this.form.value.nombreE;
+    this.experi.descripcionE = this.form.value.descripcionE;
+    this.servExperiencia.update(this.experi.id, this.experi).subscribe(res => {
+      alert("usuario editado con exito");
+      this.form.reset();
+      this.cargarExperiencia();
+    })
+
+  }
+
+}
