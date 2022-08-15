@@ -53,18 +53,18 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">EDITAR ESTUDIOS</h5>
+              <h5 class="modal-title" id="staticBackdropLabel">EDITAR EDUCACION</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
               <form [formGroup]="form" (ngSubmit)="edita()">
                 <div class="mb-3">
-                  <label for="nombreE" class="col-form-label">Nombre del estudio:</label>
+                  <label for="nombreE" class="col-form-label">Nombre de la educacion:</label>
                   <input type="text" class="form-control" id="nombreE" name="nombreE" formControlName="nombreE">
                 </div>
                 <div class="mb-3">
-                  <label for="descripcionE" class="col-form-label">Descripcion del estudio:</label>
+                  <label for="descripcionE" class="col-form-label">Descripcion de la educacion:</label>
                   <input type="text" class="form-control" name="descripcionE" id="descripcionE"
                     formControlName="descripcionE">
                 </div>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">EDITAR ESTUDIO</button>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Editar educacion</button>
                 </div>
               </form>
             </div>
@@ -95,7 +95,7 @@
       <!--******************************************************************************************************************************************-->
       <div class="card w-150 mt-3 mb-3" *ngFor="let educ of educacion" id="imagenadju">
 
-        <div class=" col-sm-10 col-md-10 col-lg-10">
+        <div class=" col-10 col-sm-10 col-md-10 col-lg-10">
           <div class="card-body rounded border border-light ">
             <p><span class="empresa">NOMBRE DEL ESTABLECIMIENTO:</span></p>
 
@@ -118,7 +118,7 @@
           </div>
         </div>
 
-        <div class=" col-sm-2 col-md-2 col-lg-2" id="thumb">
+        <div class=" col-2 col-sm-2 col-md-2 col-lg-2" id="thumb">
           <!--foto thumbnail de la experiencia-->
           <img src={{educ.imgEducacion}} alt="..." class="img-thumbnail">
         </div>

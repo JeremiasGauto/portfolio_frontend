@@ -213,7 +213,7 @@
       <!--***********************************************************************************-->
       <div class="card w-150 mt-3 mb-3" *ngFor="let proyecto of proyectos" id="imagenadju">
 
-        <div class=" col-sm-8 col-md-8 col-lg-8">
+        <div class=" col-8 col-sm-8 col-md-8 col-lg-8">
         <div class="card-body rounded border border-light">
           <p><span class="empresa">NOMBRE DEL PROYECTO:</span></p>
 
@@ -223,11 +223,10 @@
           <p class="card-text">{{ proyecto.descripcionProyecto }}</p>
 
           <p>
-            <span class="descripcion">FECHA DE REALIZACION DEL PROYECTO:</span>
+            <span class="descripcion">AÑO DE REALIZACION DEL PROYECTO:</span>
           </p>
           <p class="card-text">{{ proyecto.fecha }}</p>
-          <p><span class="descripcion">IMAGEN DEL PROYECTO:</span></p>
-          <p class="card-text">{{ proyecto.imgProyecto }}</p>
+          
           <button
             *ngIf="rolAdmin"
             class="btn btn-secondary"
@@ -246,7 +245,7 @@
           </button>
         </div>
         </div>
-        <div class=" col-sm-4 col-md-4 col-lg-4" id="thumb">
+        <div class=" col-4 col-sm-4 col-md-4 col-lg-4" id="thumb">
                 <!--foto thumbnail de la experiencia-->
         
                 <img src={{proyecto.imgProyecto}} alt="..." class="img-thumbnail">

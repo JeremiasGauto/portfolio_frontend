@@ -1,7 +1,7 @@
-
 .row {
   padding-top: 2%;
   padding-bottom: 20%;
+  padding-right: 0;
 }
 
 h1 {
@@ -72,7 +72,7 @@ span {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: grey;
+ background: linear-gradient(0deg, rgba(21,16,23,1) 0%, rgba(88,82,82,1) 35%);
 }
 
 #thumb {

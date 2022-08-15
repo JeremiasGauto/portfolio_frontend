@@ -25,18 +25,18 @@
                   <input type="text" class="form-control" id="nombreE" name="nombreE" formControlName="nombreE">
                 </div>
                 <div class="mb-3">
-                  <label for="descripcionE" class="col-form-label">Descripcion de la empresa:</label>
+                  <label for="descripcionE" class="col-form-label">Descripcion de las tareas realizadas:</label>
                   <input type="text" class="form-control" name="descripcionE" id="descripcionE"
                     formControlName="descripcionE">
                 </div>
                 <div class="mb-3">
-                  <label for="imgExperiencia" class="col-form-label">Descripcion de la empresa:</label>
+                  <label for="imgExperiencia" class="col-form-label">Imagen de la empresa:</label>
                   <input type="text" class="form-control" name="imgExperiencia" id="imgExperiencia" formControlName="imgExperiencia">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                     routerLink='/home'>Close</button>
-                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar Experiencia</button>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar experiencia</button>
                 </div>
               </form>
             </div>
@@ -63,18 +63,18 @@
                   <input type="text" class="form-control" id="nombreE" name="nombreE" formControlName="nombreE">
                 </div>
                 <div class="mb-3">
-                  <label for="descripcionE" class="col-form-label">Descripcion de la empresa:</label>
+                  <label for="descripcionE" class="col-form-label">Descripcion de las tareas realizadas:</label>
                   <input type="text" class="form-control" name="descripcionE" id="descripcionE"
                     formControlName="descripcionE">
                 </div>
                 <div class="mb-3">
-                  <label for="imgExperiencia" class="col-form-label">Descripcion de la empresa:</label>
+                  <label for="imgExperiencia" class="col-form-label">Imagen de la empresa:</label>
                   <input type="text" class="form-control" name="imgExperiencia" id="imgExperiencia" formControlName="imgExperiencia">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                     routerLink='/home'>Close</button>
-                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">EDITAR Experiencia</button>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Editar experiencia</button>
                 </div>
               </form>
             </div>
@@ -97,7 +97,7 @@
       <!--inicio del contenedor de la tarjeta y el thumbnail------------------------------------->
       <div class="card w-150 mt-3 mb-3" *ngFor="let experiencia of exper" id="imagenadju">
 
-        <div class=" col-sm-10 col-md-10 col-lg-10">
+        <div class=" col-10 col-sm-10 col-md-10 col-lg-10">
           <!--titulo y dexcripcion de la experiencia-->
           <div class="card-body rounded border border-light ">
             <p><span class="empresa">NOMBRE DE LA EMPRESA:</span></p>
@@ -106,7 +106,7 @@
             <h5 class="card-title">{{experiencia.nombreE}}</h5>
             <br>
             <br>
-            <p><span class="descripcion">DESCRIPCION DEL EMPLEO:</span> </p>
+            <p><span class="descripcion">DESCRIPCION DE LAS TAREAS REALIZADAS:</span> </p>
 
             <p class="card-text">{{experiencia.descripcionE}}</p>
             <button *ngIf="rolAdmin" class="btn btn-secondary" data-bs-toggle="modal"
@@ -121,9 +121,9 @@
         </div>
 
 
-        <div class=" col-sm-2 col-md-2 col-lg-2" id="thumb"><!--foto thumbnail de la experiencia-->
+        <div class=" col-2 col-sm-2 col-md-2 col-lg-2" id="thumb"><!--foto thumbnail de la experiencia-->
           
-          <img src="../../../assets/cemic0.jpg" alt="..." class="img-thumbnail">
+          <img src={{experiencia.imgExperiencia}} alt="..." class="img-thumbnail">
         </div>
 
 
