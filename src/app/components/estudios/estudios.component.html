@@ -16,9 +16,9 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-      
-      
-      
+
+
+
               <form [formGroup]="form" (ngSubmit)="agregarEducacion()">
                 <div class="mb-3">
                   <label for="nombreE" class="col-form-label">Nombre de la Educacion:</label>
@@ -31,15 +31,17 @@
                 </div>
                 <div class="mb-3">
                   <label for="imgEducacion" class="col-form-label">Imagen de la educacion:</label>
-                  <input type="text" class="form-control" name="imgEducacion" id="imgEducacion" formControlName="imgEducacion">
+                  <input type="text" class="form-control" name="imgEducacion" id="imgEducacion"
+                    formControlName="imgEducacion">
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink='/home'>Close</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    routerLink='/home'>Close</button>
                   <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar Educacion</button>
                 </div>
               </form>
             </div>
-      
+
           </div>
         </div>
       </div>
@@ -55,7 +57,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-      
+
               <form [formGroup]="form" (ngSubmit)="edita()">
                 <div class="mb-3">
                   <label for="nombreE" class="col-form-label">Nombre del estudio:</label>
@@ -68,15 +70,16 @@
                 </div>
                 <div class="mb-3">
                   <label for="imgEducacion" class="col-form-label">Imagen de la educacion:</label>
-                  <input type="text" class="form-control" name="imgEducacion" id="imgEducacion" formControlName="imgEducacion">
+                  <input type="text" class="form-control" name="imgEducacion" id="imgEducacion"
+                    formControlName="imgEducacion">
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">EDITAR ESTUDIO</button>
                 </div>
               </form>
             </div>
-      
+
           </div>
         </div>
       </div>
@@ -85,37 +88,39 @@
 
 
       <h1>Estudios</h1>
-<!-- Button trigger modal AGREGAR EDUCACION ---------------------------------------------------------------------------------------------------->
-      <button id="button " type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#agregarEducacion"*ngIf="rolAdmin">NUEVA
+      <!-- Button trigger modal AGREGAR EDUCACION ---------------------------------------------------------------------------------------------------->
+      <button id="button " type="button" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#agregarEducacion" *ngIf="rolAdmin">NUEVA
         EDUCACION</button>
-<!--******************************************************************************************************************************************-->
+      <!--******************************************************************************************************************************************-->
       <div class="card w-150 mt-3 mb-3" *ngFor="let educ of educacion" id="imagenadju">
 
         <div class=" col-sm-10 col-md-10 col-lg-10">
-        <div class="card-body rounded border border-light ">
-          <p><span class="empresa">NOMBRE DEL ESTABLECIMIENTO:</span></p>
+          <div class="card-body rounded border border-light ">
+            <p><span class="empresa">NOMBRE DEL ESTABLECIMIENTO:</span></p>
 
 
-          <h5 class="card-title">{{educ.nombreE}}</h5>
-          <br>
-          <br>
-          <p><span class="descripcion">DESCRIPCION DEL ESTUDIO REALIZADO:</span> </p>
+            <h5 class="card-title">{{educ.nombreE}}</h5>
+            <br>
+            <br>
+            <p><span class="descripcion">DESCRIPCION DEL ESTUDIO REALIZADO:</span> </p>
 
-          <p class="card-text">{{educ.descripcionE}}</p>
-          
-          <button *ngIf="rolAdmin" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editarEstudios" (click)="traeEditarEducacion(educ)">
-            <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
-          </button>
-          <button *ngIf="rolAdmin" class="btn btn-dark" (click)="delete(educ.id)">
+            <p class="card-text">{{educ.descripcionE}}</p>
 
-            <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar
-          </button>
-        </div>
+            <button *ngIf="rolAdmin" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editarEstudios"
+              (click)="traeEditarEducacion(educ)">
+              <fa-icon [icon]="faEdit" id="edit"></fa-icon> Editar
+            </button>
+            <button *ngIf="rolAdmin" class="btn btn-dark" (click)="delete(educ.id)">
+
+              <fa-icon [icon]="faTrashCan" id="trash"></fa-icon>Eliminar
+            </button>
+          </div>
         </div>
 
         <div class=" col-sm-2 col-md-2 col-lg-2" id="thumb">
           <!--foto thumbnail de la experiencia-->
-          <img src="../../../assets/cemic0.jpg" alt="..." class="img-thumbnail">
+          <img src={{educ.imgEducacion}} alt="..." class="img-thumbnail">
         </div>
       </div>
 

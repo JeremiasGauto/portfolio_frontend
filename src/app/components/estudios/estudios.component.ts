@@ -65,7 +65,7 @@ export class EstudiosComponent implements OnInit {
     const est: Educacion= {
       nombreE: this.form.value.nombreE,
       descripcionE: this.form.value.descripcionE,
-      imgEducacion:this.form.value.imgEducacion
+      imgEducacion:this.form.value.imgEducacion,
     }
     
     this.educacionS.save(est).subscribe(data => {
@@ -90,7 +90,7 @@ export class EstudiosComponent implements OnInit {
     this.edu.nombreE = this.form.value.nombreE;
     this.edu.descripcionE = this.form.value.descripcionE;
      this.edu.imgEducacion = this.form.value.imgEducacion;
-    this.educacionS.update(this.edu.id, this.edu).subscribe(res => {
+    this.educacionS.update(this.edu).subscribe(res => {
       alert("educacion editada con exito");
       this.form.reset();
       this.cargarEducacion();
