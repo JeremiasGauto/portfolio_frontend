@@ -18,7 +18,7 @@ import { TokenService } from 'src/app/service/token.service';
 export class ExperienciaComponent implements OnInit {
   exper: Experiencia[] = [];
   usuario: AuthService
-  experi: Experiencia= new Experiencia('','');
+  experi: Experiencia= new Experiencia('','','');
 
   faEdit = faEdit
   faTrashCan = faTrashCan
@@ -28,7 +28,9 @@ export class ExperienciaComponent implements OnInit {
   constructor(private servExperiencia: ServExperienciaService, private tokenService: TokenService, router: Router, authService: AuthService, private fb: FormBuilder) {
     this.form = this.fb.group({
       nombreE: ['', Validators.required],
-      descripcionE: ['', Validators.required]
+      descripcionE: ['', Validators.required],
+      imgExperiencia: ['', Validators.required]
+
     })
 
   }
@@ -67,7 +69,9 @@ export class ExperienciaComponent implements OnInit {
      
     const exp: Experiencia = {
       nombreE: this.form.value.nombreE,
-      descripcionE: this.form.value.descripcionE
+      descripcionE: this.form.value.descripcionE,
+      imgExperiencia:this.form.value.imgExperiencia
+
     }
     
     this.servExperiencia.save(exp).subscribe(data => {
@@ -85,6 +89,7 @@ export class ExperienciaComponent implements OnInit {
     this.experi.id=experiencia.id
     this.form.controls['nombreE'].setValue(experiencia.nombreE);
     this.form.controls['descripcionE'].setValue(experiencia.descripcionE);
+    this.form.controls['imgExperiencia'].setValue(experiencia.imgExperiencia);
     
 
   }
@@ -92,6 +97,7 @@ export class ExperienciaComponent implements OnInit {
   edita() {
     this.experi.nombreE = this.form.value.nombreE;
     this.experi.descripcionE = this.form.value.descripcionE;
+    this.experi.imgExperiencia = this.form.value.imgExperiencia;
     this.servExperiencia.update(this.experi.id, this.experi).subscribe(res => {
       alert("usuario editado con exito");
       this.form.reset();

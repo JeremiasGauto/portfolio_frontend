@@ -15,7 +15,7 @@ export class EstudiosComponent implements OnInit {
 
   faEdit = faEdit
   faTrashCan = faTrashCan
-  edu: Educacion= new Educacion('','');
+  edu: Educacion= new Educacion('','','');
 
   
   form: FormGroup;
@@ -24,7 +24,8 @@ export class EstudiosComponent implements OnInit {
     
      this.form = this.fb.group({
       nombreE: ['', Validators.required],
-      descripcionE:['', Validators.required]
+       descripcionE: ['', Validators.required],
+      imgEducacion:['', Validators.required]
     })
   }
   isLogged = false;
@@ -63,7 +64,8 @@ export class EstudiosComponent implements OnInit {
      
     const est: Educacion= {
       nombreE: this.form.value.nombreE,
-      descripcionE: this.form.value.descripcionE
+      descripcionE: this.form.value.descripcionE,
+      imgEducacion:this.form.value.imgEducacion
     }
     
     this.educacionS.save(est).subscribe(data => {
@@ -79,6 +81,7 @@ export class EstudiosComponent implements OnInit {
     this.edu.id=educ.id
     this.form.controls['nombreE'].setValue(educ.nombreE);
     this.form.controls['descripcionE'].setValue(educ.descripcionE);
+    this.form.controls['imgEducacion'].setValue(educ.imgEducacion);
     
 
   }
@@ -86,6 +89,7 @@ export class EstudiosComponent implements OnInit {
   edita() {
     this.edu.nombreE = this.form.value.nombreE;
     this.edu.descripcionE = this.form.value.descripcionE;
+     this.edu.imgEducacion = this.form.value.imgEducacion;
     this.educacionS.update(this.edu.id, this.edu).subscribe(res => {
       alert("educacion editada con exito");
       this.form.reset();
