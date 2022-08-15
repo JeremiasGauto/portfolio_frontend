@@ -71,6 +71,7 @@ export class EstudiosComponent implements OnInit {
     this.educacionS.save(est).subscribe(data => {
       this.educacion.push(est);
       this.form.reset()  
+      this.cargarEducacion()
 
     }); 
     

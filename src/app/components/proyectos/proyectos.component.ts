@@ -73,6 +73,7 @@ export class ProyectosComponent implements OnInit {
     this.proyectoService.save(proye).subscribe(data => {
       this.proyectos.push(proye)
       this.form.reset()
+      this.cargarProyecto()
       
 
     });

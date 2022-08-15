@@ -73,6 +73,7 @@ agregarSkill() {
     this.skillservice.save(ski).subscribe(data => {
       this.skill.push(ski)
       this.form.reset()
+      this.cargarSkill()
       
 
     });
