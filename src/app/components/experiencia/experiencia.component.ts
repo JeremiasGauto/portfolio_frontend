@@ -98,7 +98,7 @@ export class ExperienciaComponent implements OnInit {
     this.experi.nombreE = this.form.value.nombreE;
     this.experi.descripcionE = this.form.value.descripcionE;
     this.experi.imgExperiencia = this.form.value.imgExperiencia;
-    this.servExperiencia.update(this.experi.id, this.experi).subscribe(res => {
+    this.servExperiencia.update( this.experi).subscribe(res => {
       alert("usuario editado con exito");
       this.form.reset();
       this.cargarExperiencia();

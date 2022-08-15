@@ -24,8 +24,8 @@ export class ServExperienciaService {
     return this.httpClient.post<any>(this.experienciaURL +'create', experiencia);
   }
 
-  public update(id: number, experiencia: Experiencia): Observable<any>{    
-    return this.httpClient.put<any>(this.experienciaURL +`update/${id}`, experiencia)
+  public update(experiencia: Experiencia): Observable<any>{    
+    return this.httpClient.put<any>(this.experienciaURL +'edit', experiencia)
   }
 
   public delete(id: number): Observable<any>{
