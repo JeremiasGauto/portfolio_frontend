@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://jeremiasgautoback.herokuapp.com/auth/';
   
   currentUserSubjet: BehaviorSubject<any>;
 

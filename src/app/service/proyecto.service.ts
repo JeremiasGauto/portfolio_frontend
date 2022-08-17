@@ -10,7 +10,7 @@ export class ProyectoService {
 
   
 
-  ProyectoURL = 'http://localhost:8080/proyecto/';
+  ProyectoURL = 'https://jeremiasgautoback.herokuapp.com/proyecto/';
 
   constructor(private httpClient: HttpClient) { }
 
