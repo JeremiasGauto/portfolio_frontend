@@ -1,5 +1,4 @@
-.row { 
-  
+.row {
   background-color: #171718;
   text-align: center;
   align-items: center;
@@ -9,7 +8,7 @@
 }
 
 #nombre {
-  color: rgba(255, 255, 255,);  
+  color: rgba(255, 255, 255);
   font-weight: bold;
   font-size: 1.5rem;
 }
@@ -22,10 +21,9 @@ p {
 
 #yo {
   position: relative;
-  margin-top:31%;
+  margin-top: 31%;
   width: auto;
   height: auto;
-  
 }
 
 @media (min-width: 576px) {
@@ -36,15 +34,12 @@ p {
     top: -70px;
     width: 15%;
     z-index: 1000;
-     margin-top:31%;
+    margin-top: 31%;
   }
 }
 
-
-
 #banner {
   padding: 0;
-  ;
 }
 
 #banner2 {
@@ -53,32 +48,30 @@ p {
 }
 
 @media (max-width: 576px) {
-
   #banner2 {
-    width: 100%;
-    padding:0;
+    width: 98%;
+    padding: 0;
     margin: 0;
     position: absolute;
     display: block;
-    height: 600px;
-    top: -550px ;
+    height: 700px;
+    top: -650px;
     left: 6px;
     z-index: 0;
   }
   #banner {
     display: none;
+  }
+  #yo {
+    margin-top: 14%;
+    margin-left: 2%;
+  }
+}
 
-  }
-  #yo{
-    margin-top:0%;
-  }
+.container-fluid {
+  padding: 0;
+}
 
-  }
-
-  .container-fluid{
-    padding:0;
-  }
-
-  #imagenfondo{
-    height:50px
-  }
+#imagenfondo {
+  height: 50px;
+}
