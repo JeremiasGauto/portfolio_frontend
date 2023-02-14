@@ -10,7 +10,7 @@ export class ProyectoService {
 
   
 
-  ProyectoURL = 'https://jeremiasgautoback.herokuapp.com/proyecto/';
+  ProyectoURL = 'https://gjbackend.onrender.com/proyecto/';
 
   constructor(private httpClient: HttpClient) { }
 

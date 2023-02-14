@@ -8,7 +8,7 @@ import { Skill } from '../model/skill';
 })
 export class SkillService {
 
-  SkillURL = 'https://jeremiasgautoback.herokuapp.com/skill/';
+  SkillURL = 'https://gjbackend.onrender.com/skill/';
 
   constructor(private httpClient: HttpClient) { }
 

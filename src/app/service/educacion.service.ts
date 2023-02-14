@@ -7,7 +7,7 @@ import { Educacion } from '../model/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  educacionURL = 'https://jeremiasgautoback.herokuapp.com/educacion/';
+  educacionURL = 'https://gjbackend.onrender.com/educacion/';
 
   constructor(private httpClient: HttpClient) { }
 

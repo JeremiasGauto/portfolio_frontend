@@ -7,7 +7,7 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class ServExperienciaService {
-  experienciaURL = 'https://jeremiasgautoback.herokuapp.com/explab/'
+  experienciaURL = 'https://gjbackend.onrender.com/explab/'
 
 
   constructor(private httpClient: HttpClient) { }
